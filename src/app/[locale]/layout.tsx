@@ -1,26 +1,40 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Dancing_Script, Sarabun, Tajawal } from 'next/font/google';
 import { hasLocale, Locale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
-import Providers from '../shared/providers';
+import Providers from '../../shared/providers';
 import { getTranslations } from 'next-intl/server';
-import SwitchLanguage from '../shared/components/layout/switch-language';
+import SwitchLanguage from '../../shared/components/layout/switch-language';
+import { ModeToggle } from '@/shared/components/layout/mode-toggle';
+import { cn } from '@/shared/lib/utils';
 
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
 };
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+// Fonts
+const sarabun = Sarabun({
   subsets: ['latin'],
+  variable: '--font-en',
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  fallback: ['system-ui', 'sans-serif'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  variable: '--font-ar',
+  weight: ['200', '300', '400', '500', '700', '800', '900'],
+  fallback: ['system-ui', 'sans-serif'],
+});
+
+const dancing = Dancing_Script({
   subsets: ['latin'],
+  weight: '400',
+  variable: '--font-dancing-en',
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 export function generateStaticParams() {
@@ -51,12 +65,19 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
+      suppressHydrationWarning
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn('h-full', 'antialiased', sarabun.variable, tajawal.variable, dancing.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body
+        className={cn(
+          'min-h-full flex flex-col',
+          locale === 'ar' ? 'font-tajawal' : 'font-sarabun'
+        )}
+      >
         <Providers>
           <SwitchLanguage />
+          <ModeToggle />
           {children}
         </Providers>
       </body>
