@@ -24,7 +24,7 @@ const buttonVariants = cva(
 
         destructive: 'bg-ds-bg-danger hover:bg-ds-bg-danger-saturated text-ds-text-inverse',
 
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'border-ds-border-muted hover:bg-ds-bg-primary-fade bg-ds-bg-plain text-ds-text-plain font-semibold text-sm disabled:border-transparent',
       },
       size: {
         default: 'w-45 gap-1.5 px-4 py-3.5',

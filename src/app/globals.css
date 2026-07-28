@@ -257,6 +257,7 @@
   --bg-danger-saturated: var(--color-red-700);
   --bg-danger-faint: var(--color-red-100);
   --bg-danger-fade: var(--color-red-50);
+  --bg-danger-fade-toast: var(--bg-danger-fade);
 
   /* Text */
   --text-plain: var(--color-zinc-800);
@@ -373,6 +374,7 @@
   --bg-danger-saturated: var(--color-red-400);
   --bg-danger-faint: var(--color-red-500);
   --bg-danger-fade: color-mix(in srgb, var(--color-red-50) 25%, transparent);
+  --bg-danger-fade-toast: #431819;
 
   /* Text */
   --text-plain: var(--color-zinc-50);
