@@ -1,5 +1,5 @@
-import FormTextFooter from '@/features/auth/components/form-text-footer';
-import HeaderAuthText from '@/features/auth/components/header-text';
+import FormTextFooter from '@/features/auth/layout/components/form-text-footer';
+import HeaderAuthText from '@/features/auth/layout/components/header-text';
 import { Link } from '@/i18n/navigation';
 
 export default function LoginPage() {

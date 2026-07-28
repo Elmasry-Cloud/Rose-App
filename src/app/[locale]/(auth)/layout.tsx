@@ -1,5 +1,5 @@
 import AuthImage from '@/assets/images/auth/auth-image.png';
-import HeaderAuthImage, { FooterAuthImage } from '@/features/auth/components/header-image';
+import HeaderAuthImage, { FooterAuthImage } from '@/features/auth/layout/components/header-image';
 import SwitchLanguage from '@/shared/components/layout/switch-language';
 import Image from 'next/image';
 

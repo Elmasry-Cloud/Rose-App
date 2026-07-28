@@ -1,4 +1,4 @@
-import FormTextFooter from '@/features/auth/components/form-text-footer';
+import FormTextFooter from '@/features/auth/layout/components/form-text-footer';
 
 export default function ForgotPasswordPage() {
   return (
