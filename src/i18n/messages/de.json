@@ -1,0 +1,17 @@
+{
+  "app-title": "Rose App",
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "auth": {
+    "register-page": {
+      "title": "Hello world!"
+    },
+    "login-page": {
+      "title": "Hello world!"
+    },
+    "forgot-password-page": {
+      "title": "Hello world!"
+    }
+  }
+}
