@@ -2,5 +2,16 @@
   "app-title": "تطبيق روز",
   "HomePage": {
     "title": "مرحبا بك !"
+  },
+  "auth": {
+    "register-page": {
+      "title": "Hello world!"
+    },
+    "login-page": {
+      "title": "Hello world!"
+    },
+    "forgot-password-page": {
+      "title": "Hello world!"
+    }
   }
 }

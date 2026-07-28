@@ -15,7 +15,7 @@ export default function SwitchLanguage() {
   }, [SearchParams]);
 
   return (
-    <header>
+    <header className="w-full text-end px-4.25 font-normal text-base text-ds-text-plain">
       <Link href={pathName + SearchParams} locale={locale === 'ar' ? 'en' : 'ar'}>
         {language}
       </Link>

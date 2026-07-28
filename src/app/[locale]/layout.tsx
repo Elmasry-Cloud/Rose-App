@@ -76,8 +76,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         )}
       >
         <Providers>
-          <SwitchLanguage />
-          <ModeToggle />
+          {/* <SwitchLanguage /> */}
+          {/* <ModeToggle /> */}
           {children}
         </Providers>
       </body>
