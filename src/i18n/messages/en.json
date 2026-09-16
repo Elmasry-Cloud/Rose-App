@@ -5,10 +5,73 @@
   },
   "auth": {
     "register-page": {
-      "title": "Hello world!"
+      "title": "Become part of our family!",
+      "email-label": "Email",
+      "email-placeholder": "Enter your email address",
+      "email-required": "Email is required",
+      "email-invalid": "Invalid email address!",
+      "submit": "Next",
+
+      "first-name-label": "FirstName",
+      "first-name-placeholder": "Zoe",
+      "first-name-required": "First Name is required",
+      "first-name-min": "First Name must be at least 3 characters",
+      "first-name-max": "First Name must not exceed 20 characters",
+
+      "last-name-label": "LastName",
+      "last-name-placeholder": "Jonathan",
+      "last-name-required": "Last Name is required",
+      "last-name-min": "Last Name must be at least 3 characters",
+      "last-name-max": "Last Name must not exceed 20 characters",
+
+      "user-name-label": "Username",
+      "user-name-placeholder": "zoe123",
+      "user-name-required": "User Name is required",
+      "user-name-min": "User Name must be at least 3 characters",
+      "user-name-max": "User Name must not exceed 20 characters",
+
+      "phone-label": "Phone",
+      "phone-placeholder": "1012345678",
+      "phone-required": "Number is required!",
+      "phone-invalid": "Invalid Phone Number!",
+
+      "code-label": "Code",
+      "code-required": "Code is required!",
+      "code-length": "Code must be 6 digits!",
+
+      "gender-label": "Gender",
+      "gender-placeholder": "Select Gender",
+      "gender-required": "Gender is required!",
+
+      "password-label": "Password",
+      "password-placeholder": "********",
+      "password-min": "Password must be at least 8 characters",
+      "password-uppercase": "Password must contain at least one uppercase letter",
+      "password-lowercase": "Password must contain at least one lowercase letter",
+      "password-digit": "Password must contain at least one number",
+      "password-special": "Password must contain at least one special character",
+      "password-invalid": "Invalid password",
+
+      "password-match": "Passwords do not match",
+
+      "confirm-password-label": "Confirm Password",
+      "confirm-password-placeholder": "********",
+      "confirm-password-required": "confirmPassword is required!",
+      "confirm-password-invalid": "Invalid confirmPassword!"
     },
     "login-page": {
-      "title": "Hello world!"
+      "title": "Welcome back!",
+      "user-name-label": "Username",
+      "user-name-placeholder": "zoe123",
+      "user-name-required": "User Name is required",
+
+      "password-label": "Password",
+      "password-placeholder": "********",
+      "password-required": "Password is required",
+      "forgot-password": "Forgot your password?",
+
+      "submit": "Login",
+      "submit-error": "Invalid email or password"
     },
     "forgot-password-page": {
       "title": "Hello world!"

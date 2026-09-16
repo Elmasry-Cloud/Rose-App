@@ -1,18 +1,16 @@
-import FormTextFooter from '@/features/auth/layout/components/form-text-footer';
 import HeaderAuthText from '@/features/auth/layout/components/header-text';
 import RegisterForm from '@/features/auth/register/components/register-form';
+import { useTranslations } from 'next-intl';
 
 export default function RegisterPage() {
+  const t = useTranslations('auth.register-page');
   return (
     <>
       {/* Text Header */}
-      <HeaderAuthText textInfo="Become part of our family!" />
+      <HeaderAuthText textInfo={t('title')} />
 
       {/* Form */}
       <RegisterForm />
-
-      {/* Form Text Footer */}
-      <FormTextFooter text="Already have an account?" link="Login" href="login" />
     </>
   );
 }

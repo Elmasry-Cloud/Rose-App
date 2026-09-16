@@ -5,12 +5,7 @@ import { Combobox as ComboboxPrimitive } from '@base-ui/react';
 
 import { cn } from '@/shared/lib/utils';
 import { Button } from '@/shared/components/ui/button';
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from '@/shared/components/ui/input-group';
+
 import { ChevronDownIcon, XIcon, CheckIcon } from 'lucide-react';
 
 const Combobox = ComboboxPrimitive.Root;
@@ -52,7 +47,6 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
 
 function ComboboxInput({
   className,
-  children,
   disabled = false,
   showTrigger = true,
   showClear = false,

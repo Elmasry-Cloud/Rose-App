@@ -6,8 +6,6 @@ import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import Providers from '../../shared/providers';
 import { getTranslations } from 'next-intl/server';
-import SwitchLanguage from '../../shared/components/layout/switch-language';
-import { ModeToggle } from '@/shared/components/layout/mode-toggle';
 import { cn } from '@/shared/lib/utils';
 
 type Props = {
@@ -33,7 +31,7 @@ const tajawal = Tajawal({
 const dancing = Dancing_Script({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-dancing-en',
+  variable: '--font-dancing',
   fallback: ['system-ui', 'sans-serif'],
 });
 
