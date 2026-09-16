@@ -61,6 +61,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> = React.forwa
       smartCaret={false}
       value={value || undefined}
       defaultCountry="EG"
+      // international
       /**
        * Handles the onChange event.
        *
@@ -129,7 +130,7 @@ const CountrySelect = ({
       modal
       onOpenChange={(open) => {
         setIsOpen(open);
-        open && setSearchValue('');
+        if (open) setSearchValue('');
       }}
     >
       <PopoverTrigger
@@ -139,7 +140,7 @@ const CountrySelect = ({
             variant="outline"
             className={cn(
               // Base
-              'flex items-center gap-2 h-full border-0 border-e border-ds-border-soft rounded-none px-6',
+              'flex items-center gap-2 h-full w-fit border-0 border-e border-ds-border-soft rounded-none px-6',
 
               // Default
               'bg-transparent',
