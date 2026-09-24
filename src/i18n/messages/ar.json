@@ -5,13 +5,96 @@
   },
   "auth": {
     "register-page": {
-      "title": "Hello world!"
+      "title": "كن جزءًا من عائلتنا!",
+      "email-label": "البريد الإلكتروني",
+      "email-placeholder": "أدخل عنوان بريدك الإلكتروني",
+      "email-required": "البريد الإلكتروني مطلوب",
+      "email-invalid": "عنوان البريد الإلكتروني غير صالح!",
+      "submit": "التالي",
+
+      "first-name-label": "الاسم الأول",
+      "first-name-placeholder": "Zoe",
+      "first-name-required": "الاسم الأول مطلوب",
+      "first-name-min": "يجب ألا يقل الاسم الأول عن 3 أحرف",
+      "first-name-max": "يجب ألا يتجاوز الاسم الأول 20 حرفًا",
+
+      "last-name-label": "الاسم الأخير",
+      "last-name-placeholder": "Jonathan",
+      "last-name-required": "الاسم الأخير مطلوب",
+      "last-name-min": "يجب ألا يقل الاسم الأخير عن 3 أحرف",
+      "last-name-max": "يجب ألا يتجاوز الاسم الأخير 20 حرفًا",
+
+      "user-name-label": "اسم المستخدم",
+      "user-name-placeholder": "zoe123",
+      "user-name-required": "اسم المستخدم مطلوب",
+      "user-name-min": "يجب ألا يقل اسم المستخدم عن 3 أحرف",
+      "user-name-max": "يجب ألا يتجاوز اسم المستخدم 20 حرفًا",
+
+      "phone-label": "رقم الهاتف",
+      "phone-placeholder": "1012345678",
+      "phone-required": "رقم الهاتف مطلوب!",
+      "phone-invalid": "رقم الهاتف غير صالح!",
+
+      "code-label": "الكود",
+      "code-required": "الكود مطلوب!",
+      "code-length": "يجب أن يتكون الكود من 6 أرقام!",
+
+      "gender-label": "النوع",
+      "gender-placeholder": "اختر النوع",
+      "gender-required": "النوع مطلوب!",
+
+      "password-label": "كلمة المرور",
+      "password-placeholder": "********",
+      "password-min": "يجب ألا تقل كلمة المرور عن 8 أحرف",
+      "password-uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+      "password-lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+      "password-digit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+      "password-special": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+      "password-invalid": "كلمة المرور غير صالحة",
+
+      "password-match": "كلمتا المرور غير متطابقتين",
+
+      "confirm-password-label": "تأكيد كلمة المرور",
+      "confirm-password-placeholder": "********",
+      "confirm-password-required": "تأكيد كلمة المرور مطلوب!",
+      "confirm-password-invalid": "تأكيد كلمة المرور غير صالح!"
     },
     "login-page": {
-      "title": "Hello world!"
+      "title": "مرحبًا بعودتك!",
+      "user-name-label": "اسم المستخدم",
+      "user-name-placeholder": "zoe123",
+      "user-name-required": "اسم المستخدم مطلوب",
+
+      "password-label": "كلمة المرور",
+      "password-placeholder": "********",
+      "password-required": "كلمة المرور مطلوبة",
+      "forgot-password": "هل نسيت كلمة المرور؟",
+
+      "submit": "تسجيل الدخول",
+      "submit-error": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
     },
     "forgot-password-page": {
-      "title": "Hello world!"
+      "step-one-header-text": "هل نسيت كلمة المرور؟",
+      "step-one-header-description": "لا تقلق، سنرسل لك التعليمات لمساعدتك على إعادة تعيينها.",
+      "email-label": "البريد الإلكتروني",
+      "email-placeholder": "example@gmail.com",
+      "next-button": "التالي",
+
+      "step-two-title": "تم إرسال رابط إعادة تعيين كلمة المرور",
+      "step-two-subtitle": "لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى: ",
+      "step-two-description": "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فقد أرسلنا إليه تعليمات إعادة تعيين كلمة المرور. إذا لم تصلك الرسالة خلال بضع دقائق، يرجى التحقق من مجلد الرسائل غير المرغوب فيها (Spam).",
+      "step-two-check-spam": "إذا لم تجد الرسالة خلال بضع دقائق، يرجى التحقق من مجلد الرسائل غير المرغوب فيها (Spam).",
+
+      "step-three-title": "إنشاء كلمة مرور جديدة",
+      "step-three-description": "قم بتعيين كلمة مرور قوية لتأمين حسابك.",
+
+      "password-label": "كلمة المرور",
+      "password-placeholder": "********",
+      "confirm-password-label": "تأكيد كلمة المرور",
+      "reset-button": "إعادة تعيين كلمة المرور",
+
+      "need-help": "هل تحتاج إلى مساعدة؟",
+      "contact-support": "تواصل معنا"
     }
   }
 }

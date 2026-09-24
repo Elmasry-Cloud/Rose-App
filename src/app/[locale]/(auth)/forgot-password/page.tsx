@@ -1,13 +1,17 @@
+import ForgetPasswordForm from '@/features/auth/forget-password/components/forget-password-form';
 import FormTextFooter from '@/features/auth/layout/components/form-text-footer';
+import { getTranslations } from 'next-intl/server';
 
-export default function ForgotPasswordPage() {
+export default async function ForgotPasswordPage() {
+  // Translations
+  const t = await getTranslations('auth.forgot-password-page');
   return (
     <>
       {/* Form */}
-      <form className="pt-6 pb-9 border-t border-b border-ds-border-muted">ForgotPasswordPage</form>
+      <ForgetPasswordForm />
 
       {/* Form Text Footer */}
-      <FormTextFooter text="Don’t have an account yet?" link="Create one now!" href="register" />
+      <FormTextFooter text={t('need-help')} link={t('contact-support')} href="" />
     </>
   );
 }

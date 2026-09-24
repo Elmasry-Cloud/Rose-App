@@ -1,5 +1,6 @@
 import AuthImage from '@/assets/images/auth/auth-image.png';
 import HeaderAuthImage, { FooterAuthImage } from '@/features/auth/layout/components/header-image';
+import { ModeToggle } from '@/shared/components/layout/mode-toggle';
 import SwitchLanguage from '@/shared/components/layout/switch-language';
 import Image from 'next/image';
 
@@ -12,8 +13,12 @@ export default async function AuthLayout({ children }: Props) {
     <main className="grid grid-cols-1 lg:grid-cols-2">
       {/* Right Section */}
       <section className="right w-3/4 m-auto flex flex-col gap-10 items-center justify-center">
-        {/* Language Switcher */}
-        <SwitchLanguage />
+        <div className="flex items-center justify-end w-full pt-6">
+          <ModeToggle />
+
+          {/* Language Switcher */}
+          <SwitchLanguage />
+        </div>
 
         {/* Header Image */}
         <HeaderAuthImage />
