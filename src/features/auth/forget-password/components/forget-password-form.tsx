@@ -3,15 +3,24 @@ import ForgetStepOne from './forget-step-one';
 import ForgetStepTwo from './forget-step-two';
 import ForgetStepThree from './forget-step-three';
 import HeaderAuthText from '../../layout/components/header-text';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function ForgetPasswordForm() {
   // Translations
   const t = useTranslations('auth.forgot-password-page');
 
+  const searchParams = useSearchParams();
+  const token = searchParams.get('token');
+
   // State
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<number>(token ? 3 : 1);
+  const [email, setEmail] = useState('');
+
+  // Ref
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
   return (
     <>
       {/* Text Header */}
@@ -31,14 +40,17 @@ export default function ForgetPasswordForm() {
         />
       )}
 
-      <form
-        id="forget-password-form"
-        className="pt-6 pb-9 border-t border-b border-ds-border-muted"
-      >
-        {step === 1 && <ForgetStepOne />}
-        {step === 2 && <ForgetStepTwo />}
-        {step === 3 && <ForgetStepThree />}
-      </form>
+      {/* Form Steps */}
+      {step === 1 && (
+        <ForgetStepOne
+          setStep={setStep}
+          emailInputRef={emailInputRef}
+          email={email}
+          setEmail={setEmail}
+        />
+      )}
+      {step === 2 && <ForgetStepTwo setStep={setStep} email={email} />}
+      {step === 3 && <ForgetStepThree token={token ?? ''} />}
     </>
   );
 }

@@ -94,7 +94,25 @@
       "reset-button": "إعادة تعيين كلمة المرور",
 
       "need-help": "هل تحتاج إلى مساعدة؟",
-      "contact-support": "تواصل معنا"
+      "contact-support": "تواصل معنا",
+
+      "errors": {
+        "email-required": "البريد الإلكتروني مطلوب",
+        "email-invalid": "البريد الإلكتروني غير صالح",
+        "password-required": "كلمة المرور مطلوبة",
+        "password-invalid": "كلمة المرور غير صالحة",
+        "confirm-password-required": "تأكيد كلمة المرور مطلوب",
+        "confirm-password-invalid": "تأكيد كلمة المرور غير صالح",
+        "passwords-not-match": "كلمتا المرور غير متطابقتين",
+        "password-min": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+        "password-uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+        "password-lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+        "password-digit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+        "password-special": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+        "password-do-not-match": "كلمتا المرور غير متطابقتين"
+      },
+      "reset-success": "تم تغيير كلمة المرور بنجاح.",
+      "reset-error": "فشل في تغيير كلمة المرور"
     }
   }
 }
