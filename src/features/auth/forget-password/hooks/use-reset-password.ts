@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { resetPasswordApi } from '../api/forget-password.api';
 
 export default function useResetPassword() {
-  const { data, error, isPending, mutateAsync } = useMutation({
+  const { data, error, isPending, mutateAsync, reset } = useMutation({
     mutationFn: resetPasswordApi,
   });
 
@@ -11,5 +11,6 @@ export default function useResetPassword() {
     error,
     isPending,
     resetPasswordApi: mutateAsync,
+    reset,
   };
 }

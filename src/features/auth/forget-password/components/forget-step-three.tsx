@@ -9,6 +9,7 @@ import useResetPassword from '../hooks/use-reset-password';
 import { toast } from 'sonner';
 import { Controller } from 'react-hook-form';
 import { useRouter } from '@/i18n/navigation';
+import { useEffect } from 'react';
 
 export default function ForgetStepThree({ token }: { token: string }) {
   // Translations
@@ -18,14 +19,14 @@ export default function ForgetStepThree({ token }: { token: string }) {
   const router = useRouter();
 
   // Hook
-  const { resetPasswordApi, isPending, error } = useResetPassword();
+  const { resetPasswordApi, isPending, error, reset } = useResetPassword();
 
   // Form
   const form = useForm<TResetPasswordFormValue>({
     resolver: zodResolver(resetPasswordSchema),
     mode: 'all',
     defaultValues: {
-      token: '',
+      token,
       newPassword: '',
       confirmPassword: '',
     },
@@ -49,6 +50,13 @@ export default function ForgetStepThree({ token }: { token: string }) {
       }
     );
   };
+
+  useEffect(() => {
+    const subscription = form.watch(() => {
+      if (error) reset();
+    });
+    return () => subscription.unsubscribe();
+  }, [form, error, reset]);
 
   return (
     <form
@@ -103,12 +111,12 @@ export default function ForgetStepThree({ token }: { token: string }) {
       </FieldGroup>
 
       {/* Error Message */}
-      {error && <p className="text-ds-text-danger">{error.message}</p>}
+      {error && <p className="text-ds-text-danger text-center">{error.message}</p>}
 
       {/* Button */}
       <Button
         isLoading={isPending}
-        disabled={isPending || !!error}
+        disabled={isPending || !form.formState.isDirty || !form.formState.isValid || !!error}
         form="reset-password-form"
         type="submit"
         variant={'primary'}
