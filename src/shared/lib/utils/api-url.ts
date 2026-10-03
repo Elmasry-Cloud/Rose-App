@@ -1,4 +1,4 @@
-import 'server-only';
+// import 'server-only';
 
 export function getApiBaseUrl(): string {
   const url = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL;
