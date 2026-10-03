@@ -5,11 +5,13 @@ export interface AuthApiRequestParams<TFields> {
   fields: TFields;
 }
 
+const baseUrl = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL;
+
 export default async function authApiRequest<TFields, TData>({
   endpoint,
   fields,
 }: AuthApiRequestParams<TFields>): Promise<IApiResponse<TData>> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/${endpoint}`, {
+  const response = await fetch(`${baseUrl}/auth/${endpoint}`, {
     method: 'POST',
     body: JSON.stringify(fields),
     headers: {
