@@ -12,6 +12,7 @@ import FormTextFooter from '../../layout/components/form-text-footer';
 import RegisterContextProvider, { useRegisterContext } from '../lib/context/register.context';
 import useRegisterApi from '../lib/hooks/use-register-api';
 import { useRouter } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function RegisterForm() {
   return (
@@ -22,6 +23,9 @@ export default function RegisterForm() {
 }
 
 function RegisterFormContent() {
+  // Translation
+  const t = useTranslations('auth.register-page');
+
   // Navigation
   const router = useRouter();
 
@@ -84,9 +88,11 @@ function RegisterFormContent() {
       </form>
 
       {/* Form Text Footer */}
-      {step === 1 && <FormTextFooter text="Already have an account?" link="Login" href="login" />}
+      {step === 1 && (
+        <FormTextFooter text={t('already-have-account')} link={t('login')} href="login" />
+      )}
 
-      {4 <= step && step > 1 && <FormTextFooter text="Need help?" link="Contact us" />}
+      {4 <= step && step > 1 && <FormTextFooter text={t('need-help')} link={t('contact-us')} />}
     </FormProvider>
   );
 }

@@ -80,7 +80,7 @@ export default function RegisterStepFour({ isLoading }: { isLoading: boolean }) 
       >
         {t('submit')}
 
-        <MoveRight className="text-ds-text-inverse size-4.5" />
+        <MoveRight className="text-ds-text-inverse size-4.5 rtl:rotate-180" />
       </Button>
     </div>
   );

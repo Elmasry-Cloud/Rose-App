@@ -57,7 +57,13 @@
       "confirm-password-label": "تأكيد كلمة المرور",
       "confirm-password-placeholder": "********",
       "confirm-password-required": "تأكيد كلمة المرور مطلوب!",
-      "confirm-password-invalid": "تأكيد كلمة المرور غير صالح!"
+      "confirm-password-invalid": "تأكيد كلمة المرور غير صالح!",
+
+      "already-have-account": "هل لديك حساب بالفعل؟",
+      "login": "تسجيل الدخول",
+
+      "need-help": "هل تحتاج مساعدة؟",
+      "contact-us": "اتصل بنا"
     },
     "login-page": {
       "title": "مرحبًا بعودتك!",
@@ -69,6 +75,9 @@
       "password-placeholder": "********",
       "password-required": "كلمة المرور مطلوبة",
       "forgot-password": "هل نسيت كلمة المرور؟",
+      "remember-me": "تذكرني",
+      "dont-have-account": "ليس لديك حساب بعد؟",
+      "create-account": "أنشئ حسابًا الآن!",
 
       "submit": "تسجيل الدخول",
       "submit-error": "البريد الإلكتروني أو كلمة المرور غير صحيحة"

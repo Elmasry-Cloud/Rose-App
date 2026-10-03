@@ -57,7 +57,13 @@
       "confirm-password-label": "Confirm Password",
       "confirm-password-placeholder": "********",
       "confirm-password-required": "confirmPassword is required!",
-      "confirm-password-invalid": "Invalid confirmPassword!"
+      "confirm-password-invalid": "Invalid confirmPassword!",
+
+      "already-have-account": "Already have an account?",
+      "login": "Login",
+
+      "need-help": "Need help?",
+      "contact-us": "Contact us"
     },
     "login-page": {
       "title": "Welcome back!",
@@ -69,6 +75,10 @@
       "password-placeholder": "********",
       "password-required": "Password is required",
       "forgot-password": "Forgot your password?",
+
+      "remember-me": "Remember me",
+      "dont-have-account": "Don’t have an account yet?",
+      "create-account": "Create one now!",
 
       "submit": "Login",
       "submit-error": "Invalid email or password"

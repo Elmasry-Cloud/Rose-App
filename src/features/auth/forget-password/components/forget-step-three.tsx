@@ -9,7 +9,6 @@ import useResetPassword from '../hooks/use-reset-password';
 import { toast } from 'sonner';
 import { Controller } from 'react-hook-form';
 import { useRouter } from '@/i18n/navigation';
-import { useEffect } from 'react';
 
 export default function ForgetStepThree({ token }: { token: string }) {
   // Translations
@@ -51,13 +50,6 @@ export default function ForgetStepThree({ token }: { token: string }) {
     );
   };
 
-  useEffect(() => {
-    const subscription = form.watch(() => {
-      if (error) reset();
-    });
-    return () => subscription.unsubscribe();
-  }, [form, error, reset]);
-
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
@@ -74,6 +66,10 @@ export default function ForgetStepThree({ token }: { token: string }) {
               <FieldLabel htmlFor={field.name}>{t('password-label')}</FieldLabel>
               <Input
                 {...field}
+                onChange={(e) => {
+                  field.onChange(e);
+                  if (error) reset();
+                }}
                 id={field.name}
                 type="password"
                 aria-invalid={fieldState.invalid}
@@ -96,6 +92,10 @@ export default function ForgetStepThree({ token }: { token: string }) {
               <FieldLabel htmlFor={field.name}>{t('confirm-password-label')}</FieldLabel>
               <Input
                 {...field}
+                onChange={(e) => {
+                  field.onChange(e);
+                  if (error) reset();
+                }}
                 id={field.name}
                 type="password"
                 aria-invalid={fieldState.invalid}

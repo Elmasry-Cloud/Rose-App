@@ -14,7 +14,7 @@ export default function HeaderAuthText({
         className={cn(
           description
             ? 'font-semibold text-2xl text-ds-text-plain mb-1'
-            : 'text-center font-normal text-5xl text-ds-text-primary pb-4'
+            : 'text-center font-normal text-5xl text-ds-text-primary pb-4 font-dancing'
         )}
       >
         {textInfo}

@@ -15,7 +15,7 @@ export default function LoginPage() {
       <LoginForm />
 
       {/* Form Text Footer */}
-      <FormTextFooter text="Don’t have an account yet?" link="Create one now!" href="register" />
+      <FormTextFooter text={t('dont-have-account')} link={t('create-account')} href="register" />
     </>
   );
 }

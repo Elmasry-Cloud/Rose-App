@@ -21,6 +21,10 @@ export default function LoginForm() {
   // Form
   const form = useForm<LoginFields>({
     resolver: zodResolver(loginSchema),
+    defaultValues: {
+      username: 'kh123',
+      password: 'Kh@123456789',
+    },
   });
 
   const onSubmit = async (data: LoginFields) => {
@@ -52,7 +56,7 @@ export default function LoginForm() {
                 id="username"
                 aria-invalid={fieldState.invalid}
                 placeholder={t('user-name-placeholder')}
-                autoComplete="off"
+                autoComplete="username"
                 type="text"
               />
               {fieldState.invalid && fieldState.error?.message && (
@@ -74,7 +78,7 @@ export default function LoginForm() {
                 id="password"
                 aria-invalid={fieldState.invalid}
                 placeholder={t('password-placeholder')}
-                autoComplete="off"
+                autoComplete="current-password"
                 type="password"
               />
               {fieldState.invalid && fieldState.error?.message && (
