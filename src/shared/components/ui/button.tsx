@@ -5,7 +5,7 @@ import { cn } from '@/shared/lib/utils';
 import { LoaderCircle } from 'lucide-react';
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg cursor-pointer border border-transparent bg-clip-padding text-base font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:bg-ds-bg-soft disabled:text-ds-text-muted aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button w-full inline-flex shrink-0 items-center justify-center rounded-lg cursor-pointer border border-transparent bg-clip-padding text-base font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:bg-ds-bg-soft disabled:text-ds-text-muted aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         link: 'border-ds-border-muted hover:bg-ds-bg-primary-fade bg-ds-bg-plain text-ds-text-plain font-semibold text-sm disabled:border-transparent',
       },
       size: {
-        default: 'w-45 gap-1.5 px-4 py-3.5',
+        default: 'gap-1.5 px-4 py-3.5',
         icon: 'size-9',
         'icon-xs':
           "size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",

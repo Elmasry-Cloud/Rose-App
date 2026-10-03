@@ -82,7 +82,7 @@ function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
         }}
         className={cn(
           // Base
-          'h-12.25 w-full min-w-82 rounded-lg border p-4 font-normal text-sm shadow-xs transition-[color,box-shadow] outline-none',
+          'h-12.25 w-full rounded-lg border p-4 font-normal text-sm shadow-xs transition-[color,box-shadow] outline-none',
 
           // Default
           'border-ds-border-soft bg-ds-bg-plain text-ds-text-plain',
