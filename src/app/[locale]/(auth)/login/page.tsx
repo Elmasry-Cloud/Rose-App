@@ -1,23 +1,18 @@
 import FormTextFooter from '@/features/auth/layout/components/form-text-footer';
 import HeaderAuthText from '@/features/auth/layout/components/header-text';
-import { Link } from '@/i18n/navigation';
+import LoginForm from '@/features/auth/login/components/login-form';
+import { useTranslations } from 'next-intl';
 
 export default function LoginPage() {
+  const t = useTranslations('auth.login-page');
   return (
     <>
       {/* Text Header */}
-      <HeaderAuthText textInfo="Welcome back!" />
+      <HeaderAuthText textInfo={t('title')} />
 
       {/* Form */}
-      <form className="pt-6 pb-9 border-t border-b border-ds-border-muted">
-        LoginPage
-        <Link
-          href={'forgot-password'}
-          className="font-semibold text-sm text-ds-text-primary block text-end my-2.5"
-        >
-          Forgot your password?
-        </Link>
-      </form>
+
+      <LoginForm />
 
       {/* Form Text Footer */}
       <FormTextFooter text="Don’t have an account yet?" link="Create one now!" href="register" />

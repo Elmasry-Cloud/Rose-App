@@ -5,7 +5,10 @@
   },
   "auth": {
     "register-page": {
-      "title": "Hello world!"
+      "email-label": "البريد الإلكتروني",
+      "email-placeholder": "أدخل بريدك الإلكتروني",
+      "email-invalid": "البريد الإلكتروني غير صالح!",
+      "email-submit": "التالي"
     },
     "login-page": {
       "title": "Hello world!"
