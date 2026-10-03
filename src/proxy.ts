@@ -51,7 +51,8 @@ export async function proxy(request: NextRequest) {
 
     if (sessionAge > NON_REMEMBERED_SESSION_MAX_AGE) {
       const response = NextResponse.redirect(buildUrl('/login'));
-      response.cookies.delete('next-auth.session-token');
+      // response.cookies.delete('next-auth.session-token');
+      response.cookies.delete(process.env.NEXTAUTH_COOKIE_TOKEN_NAME ?? 'next-auth.session-token');
       return response;
     }
   }

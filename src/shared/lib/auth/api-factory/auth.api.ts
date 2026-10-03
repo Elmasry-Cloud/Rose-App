@@ -1,17 +1,16 @@
 import { IApiResponse } from '@/shared/lib/types/api-response';
+import { getApiBaseUrl } from '../../utils/api-url';
 
 export interface AuthApiRequestParams<TFields> {
   endpoint: string;
   fields: TFields;
 }
 
-const baseUrl = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL;
-
 export default async function authApiRequest<TFields, TData>({
   endpoint,
   fields,
 }: AuthApiRequestParams<TFields>): Promise<IApiResponse<TData>> {
-  const response = await fetch(`${baseUrl}/auth/${endpoint}`, {
+  const response = await fetch(`${getApiBaseUrl()}/auth/${endpoint}`, {
     method: 'POST',
     body: JSON.stringify(fields),
     headers: {
