@@ -13,12 +13,11 @@ export default async function AuthLayout({ children }: Props) {
     <main className="grid grid-cols-1 lg:grid-cols-2">
       {/* Right Section */}
       <section className="right w-3/4 m-auto flex flex-col gap-10 items-center justify-center">
-        <div className="flex items-center justify-end gap-4 w-full px-4 py-2">
+        <div className="flex items-center justify-end w-full pt-6">
+          <ModeToggle />
+
           {/* Language Switcher */}
           <SwitchLanguage />
-
-          {/* Theme Toggle */}
-          <ModeToggle />
         </div>
 
         {/* Header Image */}

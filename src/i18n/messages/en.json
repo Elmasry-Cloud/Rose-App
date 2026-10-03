@@ -74,7 +74,49 @@
       "submit-error": "Invalid email or password"
     },
     "forgot-password-page": {
-      "title": "Hello world!"
+      "step-one-header-text": "Forgot Password?",
+      "step-one-header-description": "Worry not, we’ll send you instructions to help you reset it.",
+      "email-label": "Email",
+      "email-placeholder": "example@gmail.com",
+      "next-button": "Next",
+
+      "step-two-title": "Password Reset Sent",
+      "step-two-subtitle": "We have sent a password reset link to: ",
+      "step-two-description": "If an account exists for this email address, we've sent password reset instructions. If you don't receive the email within a few minutes, check your spam or junk folder.",
+      "step-two-check-spam": "If you don’t see the email within a few minutes, check your spam or junk folder.",
+
+      "step-three-title": "Create a new password",
+      "step-three-description": "Set a strong password to secure your account.",
+
+      "password-label": "Password",
+      "password-placeholder": "New Password",
+      "confirm-password-label": "Confirm Password",
+      "reset-button": "Reset Password",
+
+      "need-help": "Need help?",
+      "contact-support": "Contact us",
+
+      "errors": {
+        "email-required": "Email is required",
+        "email-invalid": "Email is invalid",
+
+        "password-required": "Password is required",
+        "password-invalid": "Password is invalid",
+
+        "confirm-password-required": "Confirm password is required",
+        "confirm-password-invalid": "Confirm password is invalid",
+
+        "passwords-not-match": "Passwords do not match",
+        "password-min": "Password must be at least 8 characters",
+        "password-uppercase": "Password must contain at least one uppercase letter",
+        "password-lowercase": "Password must contain at least one lowercase letter",
+        "password-digit": "Password must contain at least one digit",
+        "password-special": "Password must contain at least one special character",
+        "password-do-not-match": "Passwords do not match"
+      },
+
+      "reset-success": "Your password has been successfully reset.",
+      "reset-error": "Failed to reset password"
     }
   }
 }
