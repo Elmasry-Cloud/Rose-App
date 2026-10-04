@@ -5,13 +5,14 @@ import loginApiRequest from './features/auth/login/lib/api/login.api';
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/login',
+    error: '/login',
   },
   providers: [
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Username', type: 'text' },
-        password: { label: 'Password', type: 'password' },
+        username: {},
+        password: {},
       },
       async authorize(credentials) {
         if (!credentials?.username || !credentials.password) {

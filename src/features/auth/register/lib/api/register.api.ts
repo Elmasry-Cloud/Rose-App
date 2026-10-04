@@ -1,3 +1,4 @@
+'use server';
 import authApiRequest from '@/shared/lib/auth/api-factory/auth.api';
 import { IAuthResponse } from '@/shared/lib/types/auth-response';
 
