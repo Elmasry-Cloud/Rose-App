@@ -1,3 +1,10 @@
+import Companies from '@/features/home-page/compaines/companies';
+
 export default function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      HomePage
+      <Companies />
+    </div>
+  );
 }
