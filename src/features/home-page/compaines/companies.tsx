@@ -15,18 +15,29 @@ const companies = [
   { name: 'Company 6', logo: Company_6 },
 ];
 
-export default function Companies() {
+export default function CompaniesSection() {
   return (
-    <section className="mt-35 mb-85 w-4/5 mx-auto py-10 px-6 rounded-2xl bg-ds-bg-primary-fade flex flex-col gap-10 items-center justify-center text-center">
-      <h3 className="font-bold text-2xl sm:text-4xl">
-        Trusted by over <span className="text-ds-text-secondary">4.5k+</span> companies
-      </h3>
+    <section
+      aria-labelledby="companies-title"
+      className="mt-35 mb-85 w-4/5 mx-auto py-10 px-6 rounded-2xl bg-ds-bg-primary-fade flex flex-col gap-10 items-center justify-center text-center"
+    >
+      <h2 id="companies-title" className="font-bold text-2xl sm:text-4xl">
+        Trusted by over <span className="text-ds-text-secondary">4.5k+</span> companies
+      </h2>
 
-      <div className="images flex flex-wrap items-center justify-center gap-10">
+      <ul className="flex flex-wrap items-center justify-center gap-10">
         {companies.map((company) => (
-          <Image key={company.name} src={company.logo} alt={company.name} width={146} height={51} />
+          <li key={company.name}>
+            <Image
+              src={company.logo}
+              alt={company.name}
+              width={146}
+              height={51}
+              className="h-auto w-auto max-h-12.75 object-contain"
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
