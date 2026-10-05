@@ -1,4 +1,4 @@
-import Testimonials from '@/features/home-page/testimnials/testimonials';
+import TestimonialsSection from '@/features/home-page/testimnials/testimonials';
 import HeaderSection from '@/shared/components/header-section';
 
 export default function HomePage() {
@@ -6,7 +6,7 @@ export default function HomePage() {
     <div>
       HomePage
       <HeaderSection sectionTitle="Testimonials" sectionText="Real Words from Happy Customers" />
-      <Testimonials />
+      <TestimonialsSection />
     </div>
   );
 }
