@@ -212,6 +212,24 @@
   --color-zinc-800: #27272a;
   --color-zinc-900: #18181b;
   --color-zinc-950: #09090b;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 /* ======== LIGHT MODE ======== */
@@ -481,4 +499,26 @@
   .ring-danger {
     box-shadow: var(--ring-danger);
   }
+}
+
+/* Custom Css */
+p.header-description::before {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 3px;
+  background-color: var(--color-soft-pink-800);
+  bottom: 0;
+  left: 0;
+}
+p.header-description::after {
+  content: '';
+  position: absolute;
+  width: 72%;
+  height: 17px;
+  background-color: var(--bg-secondary-faint);
+  bottom: 0;
+  left: 0;
+  border-radius: 0 20px 20px 0;
+  z-index: -1;
 }
