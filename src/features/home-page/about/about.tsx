@@ -31,6 +31,7 @@ export default function AboutSection() {
               src={About_1}
               alt="Hand pulling the ribbon of a purple gift box"
               sizes="(min-width: 1024px) 16vw, 50vw"
+              placeholder="blur"
               className="size-full object-cover"
             />
           </div>
@@ -43,6 +44,7 @@ export default function AboutSection() {
               src={About_2}
               alt="Wrapped gift with orange ribbon and confetti"
               sizes="(min-width: 1024px) 11vw, 35vw"
+              placeholder="blur"
               className="size-full object-cover"
             />
           </div>
@@ -52,6 +54,7 @@ export default function AboutSection() {
               src={About_3}
               alt="Balloons lifting a small gift box above a gift card"
               sizes="(min-width: 1024px) 11vw, 35vw"
+              placeholder="blur"
               className="size-full object-cover"
             />
           </div>
