@@ -20,6 +20,7 @@ export interface Product {
   subCategory: SubCategory;
   occasions: Occasion[];
   _count: Count;
+  isNew?: boolean;
 }
 
 export interface Category {
