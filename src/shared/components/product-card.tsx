@@ -1,5 +1,5 @@
 import { Badge } from '@/shared/components/ui/badge';
-import { Eye, Heart, ShoppingCart, Star } from 'lucide-react';
+import { Eye, HeartPlus, ShoppingCart, Star } from 'lucide-react';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import { getProductsAction } from '@/features/api/get-products/get-products.action';
@@ -8,7 +8,7 @@ import { NEW_PRODUCT_MS, PAGE, PRODUCTS_LIMIT } from '../lib/website/constant/sh
 
 // Icons for the image overlay
 const overlayActions = [
-  { label: 'Add to wishlist', icon: Heart },
+  { label: 'Add to wishlist', icon: HeartPlus },
   { label: 'Quick view', icon: Eye },
 ];
 
