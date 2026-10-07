@@ -21,7 +21,12 @@ export default function ProductCard({ occasionId }: ProductCardProps) {
   } = useQuery({
     queryKey: ['products', occasionId],
     queryFn: async () => {
-      const res = await getProductsAction({ page: PAGE, limit: PRODUCTS_LIMIT, occasionId });
+      const res = await getProductsAction({
+        page: PAGE,
+        limit: PRODUCTS_LIMIT,
+        occasionId,
+        sortBy: 'mostPopular',
+      });
       const now = Date.now();
 
       return {
@@ -69,10 +74,10 @@ export default function ProductCard({ occasionId }: ProductCardProps) {
   }
 
   return (
-    <ul className={GRID_CLASSES}>
+    <div className={GRID_CLASSES}>
       {items.map((product) => (
         <CardItem key={product.id} product={product} />
       ))}
-    </ul>
+    </div>
   );
 }

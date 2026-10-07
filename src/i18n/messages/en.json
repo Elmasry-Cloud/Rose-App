@@ -1,8 +1,16 @@
 {
   "app-title": "Rose App",
-  "HomePage": {
-    "title": "Hello world!"
+  "home-page": {
+    "best-selling": {
+      "text": "Best Selling",
+      "title": "<accent>Check Out</accent> What Everyone’s <accent>Buying</accent> Right Now",
+      "description": "Not sure what to choose? Start with our best sellers, these are the gifts our customers keep coming back for. Whether you're celebrating a birthday, anniversary or wedding, our top picks are guaranteed to leave a lasting impression.",
+      "btn": "Explore gifts",
+      "empty": "No best sellers available right now.",
+      "carouselLabel": "Best selling products"
+    }
   },
+
   "auth": {
     "register-page": {
       "title": "Become part of our family!",
