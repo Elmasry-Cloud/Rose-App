@@ -7,7 +7,7 @@ export interface GetApiParams {
   minPrice: number;
   maxPrice: number;
   minRating: number;
-  sortBy: 'bestSelling' | 'mostPopular';
+  sortBy: 'bestSelling' | 'mostPopular' | 'title' | 'price' | 'rating' | 'createdAt';
   sortOrder: 'asc' | 'desc';
   search: string;
 }
