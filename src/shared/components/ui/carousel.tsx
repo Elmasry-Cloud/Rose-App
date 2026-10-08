@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { cn } from 'cn';
+import { cn } from '@/shared/lib/utils';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 
 import { Button } from '@/shared/components/ui/button';
@@ -134,7 +134,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden" data-slot="carousel-content">
+    <div ref={carouselRef} className="h-full overflow-hidden" data-slot="carousel-content">
       <div
         className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
         {...props}
@@ -175,9 +175,9 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        'absolute touch-manipulation rounded-full w-9.5 h-9.5',
+        'absolute touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? 'inset-y-0 -left-4 my-auto'
+          ? 'inset-y-0 -left-12 my-auto'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
         className
       )}
@@ -185,7 +185,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon className="size-5" />
+      <ChevronLeftIcon />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -205,9 +205,9 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        'absolute touch-manipulation rounded-full w-9.5 h-9.5',
+        'absolute touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? 'inset-y-0 -right-4 my-auto'
+          ? 'inset-y-0 -right-12 my-auto'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
         className
       )}
@@ -215,7 +215,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon className="size-5" />
+      <ChevronRightIcon />
       <span className="sr-only">Next slide</span>
     </Button>
   );

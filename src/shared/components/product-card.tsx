@@ -3,6 +3,7 @@ import { getProductsAction } from '@/features/api/get-products/get-products.acti
 import ProductCardSkeleton from './skeletons/product-skeleton';
 import { NEW_PRODUCT_MS, PAGE, PRODUCTS_LIMIT } from '../lib/website/constant/shared-constant';
 import CardItem from './card-item';
+import { useTranslations } from 'next-intl';
 
 // Grid classes for product cards
 const GRID_CLASSES = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6';
@@ -13,6 +14,9 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ occasionId }: ProductCardProps) {
+  // Translations
+  const t = useTranslations('home-page.most-popular');
+
   // Fetch products
   const {
     data: products,
@@ -43,7 +47,7 @@ export default function ProductCard({ occasionId }: ProductCardProps) {
   if (isLoading) {
     return (
       <div role="status">
-        <span className="sr-only">Loading products…</span>
+        <span className="sr-only">{t('loading')}</span>
         <div className={GRID_CLASSES} aria-hidden="true">
           {Array.from({ length: PRODUCTS_LIMIT }).map((_, index) => (
             <ProductCardSkeleton key={index} />
@@ -57,7 +61,7 @@ export default function ProductCard({ occasionId }: ProductCardProps) {
   if (isError) {
     return (
       <p role="alert" className="font-bold text-ds-text-danger text-center">
-        Something went wrong
+        {t('error')}
       </p>
     );
   }
@@ -68,7 +72,7 @@ export default function ProductCard({ occasionId }: ProductCardProps) {
   if (items.length === 0) {
     return (
       <p role="status" className="font-bold text-ds-text-primary text-center">
-        No products found
+        {t('no-products')}
       </p>
     );
   }

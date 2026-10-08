@@ -2,6 +2,7 @@ import { Eye, HeartPlus, ShoppingCart, Star } from 'lucide-react';
 import Image from 'next/image';
 import { Product } from '../lib/types/get-api-response';
 import { Badge } from './ui/badge';
+import { useFormatter, useTranslations } from 'next-intl';
 
 // Icons for the image overlay
 const overlayActions = [
@@ -10,6 +11,17 @@ const overlayActions = [
 ];
 
 export default function CardItem({ product }: { product: Product }) {
+  // Translations
+  const t = useTranslations('home-page.most-popular');
+  const format = useFormatter();
+
+  const formatPrice = (value: number) =>
+    format.number(value, {
+      style: 'currency',
+      currency: 'EGP',
+      maximumFractionDigits: 0,
+    });
+
   // Check if product is out of stock or new
   const outOfStock = product.stock <= 0;
 
@@ -23,18 +35,34 @@ export default function CardItem({ product }: { product: Product }) {
   // Rating
   const rating = Math.min(5, Math.max(0, Number(product.rating) || 0));
   const filledStars = Math.round(rating);
+
   return (
-    <article className="card w-full h-full flex flex-col gap-4 bg-transparent">
-      {/* Card Image */}
-      <div className="image group relative aspect-square w-full shrink-0 rounded-xl overflow-hidden">
-        {(outOfStock || isNew) && (
-          <Badge
-            variant={outOfStock ? 'destructive' : 'subtle'}
-            className="absolute top-2 inset-e-2"
-          >
-            {outOfStock ? 'Out of Stock' : 'New'}
-          </Badge>
-        )}
+    <li key={product.id}>
+      <article className="card h-full flex flex-col gap-4 bg-transparent">
+        {/* Card Image */}
+        <div className="image group relative h-68 shrink-0 rounded-xl overflow-hidden">
+          {(outOfStock || isNew) && (
+            <Badge
+              variant={outOfStock ? 'destructive' : 'subtle'}
+              className="absolute top-2 inset-e-2"
+            >
+              {outOfStock ? t('out-of-stock') : t('new')}
+            </Badge>
+          )}
+
+          {/* Image Overlay (visible on hover and keyboard focus) */}
+          <div className="image-overlay absolute inset-0 flex items-center justify-center gap-2.5 bg-ds-bg-secondary/50 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+            {overlayActions.map(({ label, icon: Icon }) => (
+              <button
+                key={label}
+                type="button"
+                aria-label={label}
+                className="w-7.5 h-7.5 flex items-center justify-center bg-ds-bg-plain hover:bg-ds-bg-secondary hover:text-ds-text-inverse rounded-full cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+              >
+                <Icon className="size-5" aria-hidden="true" />
+              </button>
+            ))}
+          </div>
 
         {/* Image Overlay (visible on hover and keyboard focus) */}
         <div className="image-overlay absolute inset-0 flex items-center justify-center gap-2.5 bg-ds-bg-secondary/50 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
@@ -66,25 +94,18 @@ export default function CardItem({ product }: { product: Product }) {
           {product.title}
         </h3>
 
-        {/* Product Info */}
-        <div className="card-footer mt-auto flex items-center justify-between">
-          <div className="info">
-            <div
-              role="img"
-              aria-label={rating > 0 ? `Rated ${rating} out of 5` : 'No ratings yet'}
-              className="stars flex items-center gap-1 mb-3"
-            >
-              {Array.from({ length: 5 }).map((_, index) => (
-                <Star
-                  key={index}
-                  aria-hidden="true"
-                  className={`size-4 ${
-                    index < filledStars
-                      ? 'text-orange-500 fill-orange-500'
-                      : 'text-gray-300 fill-gray-300'
-                  }`}
-                />
-              ))}
+              <p>
+                <span className="sr-only">{t('price')}: </span>
+                <span className="price font-medium text-base text-ds-text-primary inline-block me-1">
+                  {formatPrice(finalPrice)}
+                </span>
+                {hasDiscount && (
+                  <del className="original-price font-medium text-base text-ds-text-muted">
+                    <span className="sr-only">{t('original-price')}: </span>
+                    {formatPrice(Number(product.price))}
+                  </del>
+                )}
+              </p>
             </div>
 
             <p>

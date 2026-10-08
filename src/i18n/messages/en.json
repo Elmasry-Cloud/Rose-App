@@ -8,6 +8,117 @@
       "btn": "Explore gifts",
       "empty": "No best sellers available right now.",
       "carouselLabel": "Best selling products"
+    },
+    "hero-section": {
+      "banner": {
+        "card-title": "Starting from 10.99 EGP",
+        "card-description": "Special Gifts For The People You Love",
+        "card-button": "Shop Now",
+        "carousel-title": "Say It with Flowers",
+        "carousel-description": "Elegant gifts for every special moment.",
+        "carousel-button": "I’m buying!",
+        "carousel-label": "Featured gifts",
+        "slides-label": "Slides",
+        "slide-label": "Slide {number}"
+      },
+      "occasions": {
+        "label": "Shop by occasion",
+        "wedding": {
+          "title": "Wedding",
+          "description": "Celebrate Her Forever with a Gift She'll Always Remember"
+        },
+        "engagement": {
+          "title": "Engagement",
+          "description": "Honor the Beginning of a Beautiful Journey Together"
+        },
+        "anniversary": {
+          "title": "Anniversary",
+          "description": "Mark Every Year of Love with a Meaningful Surprise"
+        }
+      },
+      "features": {
+        "label": "Our store benefits",
+        "free-delivery": {
+          "title": "Free Delivery",
+          "description": "For orders above 120 EGP"
+        },
+        "get-refund": {
+          "title": "Get Refund",
+          "description": "Refunds within 30 days"
+        },
+        "safe-payment": {
+          "title": "Safe Payment",
+          "description": "100% Secure Payment"
+        },
+        "support": {
+          "title": "24/7 Support",
+          "description": "Contact us at any time"
+        }
+      }
+    },
+
+    "most-popular": {
+      "title": "Most Popular",
+      "view-more": "View More",
+      "loading": "Loading products...",
+      "error": "Something went wrong",
+      "no-products": "No products found",
+      "out-of-stock": "Out of Stock",
+      "new": "New",
+      "price": "Price",
+      "original-price": "Original price"
+    },
+
+    "about": {
+      "title": "About",
+      "subtitle": "Delivering the Finest Gift Boxes for Your Special Moments",
+      "description": "Make every moment memorable with our premium gift boxes. Carefully curated and beautifully packaged, each box is filled with handpicked items designed to impress. Whether it's for a birthday, wedding, or a simple \"thank you,\" our gift boxes are crafted to leave a lasting impression — because thoughtful gifting starts here.",
+      "discover": "Discover",
+      "features": {
+        "prices": "Competitive Prices & Easy Shopping",
+        "quality": "Premium Quality & Elegant Packaging",
+        "occasion": "Perfect for Every Occasion",
+        "delivery": "Fast & Reliable Delivery"
+      }
+    },
+
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Check Out our Wonderful Gallery"
+    },
+
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "Real Words from Happy Customers"
+    },
+
+    "companies": {
+      "title": "Trusted by over <highlight>4.5k+</highlight> companies"
+    },
+
+    "footer": {
+      "logo-alt": "Rose E-Commerce App – Home",
+      "brand": "Rose E-Commerce App",
+      "copyright": "© {year} Rose E-Commerce App. All rights reserved.",
+      "discover": "Discover our website",
+      "links": {
+        "home": "Home",
+        "products": "Products",
+        "categories": "Categories",
+        "occasions": "Occasions",
+        "contact": "Contact",
+        "about": "About",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "faqs": "FAQs"
+      },
+      "newsletter": {
+        "title": "Get <highlight>20%</highlight> Off Discount Coupon",
+        "description": "By subscribing to our newsletter",
+        "email-label": "Email address",
+        "placeholder": "Enter your email",
+        "subscribe": "Subscribe"
+      }
     }
   },
 
