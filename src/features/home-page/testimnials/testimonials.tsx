@@ -6,7 +6,7 @@ export default function TestimonialsSection() {
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="relative flex w-full items-center justify-center overflow-hidden bg-ds-bg-primary-fade py-20"
+      className="relative flex w-full items-center justify-center overflow-hidden bg-ds-bg-primary-fade py-20 mt-10"
     >
       <h2 id="testimonials-heading" className="sr-only">
         What our customers say

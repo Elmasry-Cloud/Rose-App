@@ -2,6 +2,7 @@ import { Eye, HeartPlus, ShoppingCart, Star } from 'lucide-react';
 import Image from 'next/image';
 import { Product } from '../lib/types/get-api-response';
 import { Badge } from './ui/badge';
+import { useFormatter, useTranslations } from 'next-intl';
 
 // Icons for the image overlay
 const overlayActions = [
@@ -10,6 +11,17 @@ const overlayActions = [
 ];
 
 export default function CardItem({ product }: { product: Product }) {
+  // Translations
+  const t = useTranslations('home-page.most-popular');
+  const format = useFormatter();
+
+  const formatPrice = (value: number) =>
+    format.number(value, {
+      style: 'currency',
+      currency: 'EGP',
+      maximumFractionDigits: 0,
+    });
+
   // Check if product is out of stock or new
   const outOfStock = product.stock <= 0;
 
@@ -23,6 +35,7 @@ export default function CardItem({ product }: { product: Product }) {
   // Rating
   const rating = Math.min(5, Math.max(0, Number(product.rating) || 0));
   const filledStars = Math.round(rating);
+
   return (
     <li key={product.id}>
       <article className="card h-full flex flex-col gap-4 bg-transparent">
@@ -33,7 +46,7 @@ export default function CardItem({ product }: { product: Product }) {
               variant={outOfStock ? 'destructive' : 'subtle'}
               className="absolute top-2 inset-e-2"
             >
-              {outOfStock ? 'Out of Stock' : 'New'}
+              {outOfStock ? t('out-of-stock') : t('new')}
             </Badge>
           )}
 
@@ -89,14 +102,14 @@ export default function CardItem({ product }: { product: Product }) {
               </div>
 
               <p>
-                <span className="sr-only">Price: </span>
+                <span className="sr-only">{t('price')}: </span>
                 <span className="price font-medium text-base text-ds-text-primary inline-block me-1">
-                  {finalPrice} EGP
+                  {formatPrice(finalPrice)}
                 </span>
                 {hasDiscount && (
                   <del className="original-price font-medium text-base text-ds-text-muted">
-                    <span className="sr-only">Original price: </span>
-                    {product.price} EGP
+                    <span className="sr-only">{t('original-price')}: </span>
+                    {formatPrice(Number(product.price))}
                   </del>
                 )}
               </p>

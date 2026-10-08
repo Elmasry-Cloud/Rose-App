@@ -5,6 +5,8 @@ import Gallery_3 from '@/assets/images/gallery/gallery-3.png';
 import Gallery_4 from '@/assets/images/gallery/gallery-4.png';
 import Gallery_5 from '@/assets/images/gallery/gallery-5.png';
 import Gallery_6 from '@/assets/images/gallery/gallery-6.png';
+import HeaderSection from '@/shared/components/header-section';
+import { useTranslations } from 'next-intl';
 
 const GALLERY_ITEMS = [
   { src: Gallery_1, alt: 'Describe gallery image 1' },
@@ -16,13 +18,14 @@ const GALLERY_ITEMS = [
 ];
 
 export default function GallerySection() {
-  return (
-    <section aria-labelledby="gallery-heading" className="my-34.75 w-4/5 mx-auto">
-      <h2 id="gallery-heading" className="sr-only">
-        Gallery
-      </h2>
+  // Translations
+  const t = useTranslations('home-page.gallery');
 
-      <ul role="list" className="parent">
+  return (
+    <section aria-labelledby="gallery-heading" className="my-34.75">
+      <HeaderSection sectionTitle={t('title')} sectionText={t('subtitle')} id="gallery-heading" />
+
+      <ul role="list" className="parent mt-10">
         {GALLERY_ITEMS.map(({ src, alt }, index) => (
           <li key={index} className={`div${index + 1}`}>
             <Image src={src} alt={alt} sizes="27vw" className="h-full w-full object-cover" />

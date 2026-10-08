@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { MoveRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import BannerCard from '@/assets/images/banner-home-page/Hero-Section-Banner (1).png';
 import { Link } from '@/i18n/navigation';
@@ -44,10 +44,13 @@ export default function BannerHomePage() {
             nativeButton={false}
             render={<Link href="/products" />}
             variant="secondary"
-            className={cn('py-2.5', darkSecondary)}
+            className={cn('group py-2.5', darkSecondary)}
           >
             {t('card-button')}
-            <ArrowRight className="rtl:rotate-180" aria-hidden="true" />
+            <MoveRight
+              className="size-4 rtl:-scale-x-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
+              aria-hidden="true"
+            />
           </Button>
         </div>
       </article>

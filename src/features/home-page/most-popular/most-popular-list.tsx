@@ -5,21 +5,25 @@ import { useState } from 'react';
 import { Occasion2 } from '@/shared/lib/types/get-api-response';
 import ProductCard from '@/shared/components/product-card';
 import { Link } from '@/i18n/navigation';
+import HeaderSection from '@/shared/components/header-section';
+import { useTranslations } from 'next-intl';
 
 type MostPopularListProps = {
   occasions: Occasion2[];
 };
 
 export default function OccasionsFilter({ occasions }: MostPopularListProps) {
+  // Translations
+  const t = useTranslations('home-page.most-popular');
+
   // State
   const [selectedId, setSelectedId] = useState<string | undefined>(occasions[0]?.id);
 
   return (
     <>
       <header className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between mb-10">
-        <h2 id="most-popular-heading" className="text-2xl font-bold text-ds-text-primary">
-          head
-        </h2>
+        {/* Header Section */}
+        <HeaderSection sectionText={t('title')} id="most-popular-heading" style="text-2xl w-fit" />
 
         {/* Occasions List */}
         {occasions.length > 0 && (
@@ -55,8 +59,11 @@ export default function OccasionsFilter({ occasions }: MostPopularListProps) {
         href="/products"
         className="w-fit mt-10 ms-auto group flex items-center gap-2.5 text-ds-text-primary font-semibold text-base cursor-pointer hover:text-ds-text-secondary transition-colors"
       >
-        View More
-        <MoveRight className="size-5 rtl:rotate-180 group-hover:translate-x-1 transition-transform" />
+        {t('view-more')}
+        <MoveRight
+          aria-hidden="true"
+          className="size-5 rtl:-scale-x-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
+        />
       </Link>
     </>
   );

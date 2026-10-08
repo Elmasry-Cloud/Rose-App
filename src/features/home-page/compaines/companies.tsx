@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import Company_1 from '@/assets/images/Companies/Companie-1.png';
-import Company_2 from '@/assets/images/Companies/Companie-2.png';
-import Company_3 from '@/assets/images/Companies/Companie-3.png';
-import Company_4 from '@/assets/images/Companies/Companie-4.png';
-import Company_5 from '@/assets/images/Companies/Companie-5.png';
-import Company_6 from '@/assets/images/Companies/Companie-6.png';
+import Company_1 from '@/assets/images/Companies/companie-1.png';
+import Company_2 from '@/assets/images/Companies/companie-2.png';
+import Company_3 from '@/assets/images/Companies/companie-3.png';
+import Company_4 from '@/assets/images/Companies/companie-4.png';
+import Company_5 from '@/assets/images/Companies/companie-5.png';
+import Company_6 from '@/assets/images/Companies/companie-6.png';
+import { useTranslations } from 'next-intl';
 
 const companies = [
   { name: 'Company 1', logo: Company_1 },
@@ -16,13 +17,18 @@ const companies = [
 ];
 
 export default function CompaniesSection() {
+  // Translation
+  const t = useTranslations('home-page.companies');
+
   return (
     <section
       aria-labelledby="companies-title"
-      className="mt-35 mb-85 w-4/5 mx-auto py-10 px-6 rounded-2xl bg-ds-bg-primary-fade flex flex-col gap-10 items-center justify-center text-center"
+      className="w-11/12 mx-auto mt-35 mb-85 py-10 px-6 rounded-2xl bg-ds-bg-primary-fade flex flex-col gap-10 items-center justify-center text-center"
     >
       <h2 id="companies-title" className="font-bold text-2xl sm:text-4xl">
-        Trusted by over <span className="text-ds-text-secondary">4.5k+</span> companies
+        {t.rich('title', {
+          highlight: (chunks) => <span className="text-ds-text-secondary">{chunks}</span>,
+        })}
       </h2>
 
       <ul className="flex flex-wrap items-center justify-center gap-10">

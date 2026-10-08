@@ -14,7 +14,7 @@ export default function FeaturesSection() {
   const t = useTranslations('home-page.hero-section.features');
 
   return (
-    <section aria-label={t('label')} className="mt-10">
+    <section aria-label={t('label')} className="mt-10 mb-27">
       <ul
         className={cn(
           'features grid grid-cols-1 gap-6 rounded-2xl bg-ds-bg-primary-fade p-10 md:grid-cols-2 xl:grid-cols-4',

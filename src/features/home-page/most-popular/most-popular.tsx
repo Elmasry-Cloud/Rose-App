@@ -6,7 +6,7 @@ export default async function MostPopularSection() {
   const occasions = await getOccasions({ page: 1, limit: 12 });
 
   return (
-    <section aria-labelledby="most-popular-heading" className="w-4/5 mx-auto">
+    <section aria-labelledby="most-popular-heading" className="my-34.75">
       <OccasionsFilter occasions={occasions.data} />
     </section>
   );
