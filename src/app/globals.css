@@ -521,4 +521,45 @@ p.header-description::after {
   left: 0;
   border-radius: 0 20px 20px 0;
   z-index: -1;
+/* Gallery Section */
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div1 {
+  grid-row: span 3 / span 3;
+}
+
+.div2 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.div3 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.div4 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.div5 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.div6 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 3;
 }
