@@ -57,7 +57,22 @@
       }
     },
 
+    "product-card": {
+      "out-of-stock": "Out of Stock",
+      "new": "New",
+      "wishlist-label": "Add {title} to wishlist",
+      "quick-view-label": "Quick view {title}",
+      "add-to-cart": "Add {title} to cart",
+      "rating": "Rated {rating} out of 5",
+      "no-rating": "No ratings yet",
+      "price": "Price",
+      "original-price": "Original price",
+      "currency": "{value} EGP"
+    },
+
     "most-popular": {
+      "filter-label": "Filter products by occasion",
+      "empty": "No occasions available right now.",
       "title": "Most Popular",
       "view-more": "View More",
       "loading": "Loading products...",

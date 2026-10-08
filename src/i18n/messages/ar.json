@@ -57,7 +57,22 @@
       }
     },
 
+    "product-card": {
+      "out-of-stock": "نفدت الكمية",
+      "new": "جديد",
+      "wishlist-label": "أضف {title} إلى المفضلة",
+      "quick-view-label": "عرض سريع لـ {title}",
+      "add-to-cart": "أضف {title} إلى السلة",
+      "rating": "التقييم {rating} من 5",
+      "no-rating": "لا توجد تقييمات بعد",
+      "price": "السعر",
+      "original-price": "السعر الأصلي",
+      "currency": "{value} ج.م"
+    },
+
     "most-popular": {
+      "filter-label": "تصفية المنتجات حسب المناسبة",
+      "empty": "لا توجد مناسبات متاحة حالياً.",
       "title": "الأكثر مبيعاً",
       "view-more": "عرض المزيد",
       "loading": "جاري تحميل المنتجات...",

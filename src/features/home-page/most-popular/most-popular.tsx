@@ -12,7 +12,7 @@ async function MostPopularContent() {
 
 export default function MostPopularSection() {
   return (
-    <section aria-labelledby="most-popular-heading" className="w-4/5 mx-auto">
+    <section aria-labelledby="most-popular-heading" className="my-34.75">
       <Suspense fallback={<MostPopularFallback />}>
         <MostPopularContent />
       </Suspense>

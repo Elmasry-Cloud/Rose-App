@@ -9,6 +9,7 @@ import TestimonialsSection from '@/features/home-page/testimnials/testimonials';
 import CompaniesSection from '@/features/home-page/compaines/companies';
 import FooterSection from '@/features/home-page/footer/footer';
 import { useTranslations } from 'next-intl';
+import BestSellingSection from '@/features/home-page/best-selling/best-selling-section';
 
 export default function HomePage() {
   // Translation
@@ -21,6 +22,9 @@ export default function HomePage() {
         <BannerHomePage />
         <OccasionsSection />
         <FeaturesSection />
+
+        {/* Best Selling Section */}
+        <BestSellingSection />
 
         {/* Most Popular Section */}
         <MostPopularSection />

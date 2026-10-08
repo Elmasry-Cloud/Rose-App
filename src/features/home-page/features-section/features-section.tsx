@@ -22,15 +22,15 @@ export default function FeaturesSection() {
         )}
       >
         {featuresInfo.map(({ id, key, Icon }) => (
-          <li key={id} className="flex items-center justify-center gap-4">
+          <li key={id} className="flex items-center gap-4">
             <div
               className={cn(
-                'rounded-full bg-maroon-600 px-3.5 py-4 text-ds-text-inverse',
+                'flex h-15 w-15 items-center justify-center rounded-full bg-maroon-600 text-ds-text-inverse',
                 'dark:bg-ds-bg-primary-saturated'
               )}
               aria-hidden="true"
             >
-              <Icon size={40} strokeWidth={1.46} />
+              <Icon className="size-10" />
             </div>
 
             <div className="min-w-39.25">

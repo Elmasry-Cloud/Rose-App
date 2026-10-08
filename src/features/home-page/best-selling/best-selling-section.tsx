@@ -36,7 +36,7 @@ export default async function BestSellingSection() {
   return (
     <section
       aria-labelledby="best-selling-heading"
-      className="w-4/5 mb-34.5 mt-26.75 mx-auto grid grid-cols-1 lg:grid-cols-6 gap-9"
+      className="mb-34.5 mt-26.75 grid grid-cols-1 lg:grid-cols-6 gap-9"
     >
       {/* Text Content */}
       <div className="col-span-1 lg:col-span-2 flex flex-col gap-2.5">

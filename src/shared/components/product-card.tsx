@@ -1,87 +1,84 @@
-import { useQuery } from '@tanstack/react-query';
-import { getProductsAction } from '@/features/api/get-products/get-products.action';
-import ProductCardSkeleton from './skeletons/product-skeleton';
-import { NEW_PRODUCT_MS, PAGE, PRODUCTS_LIMIT } from '../lib/website/constant/shared-constant';
-import CardItem from './card-item';
+'use client';
+
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
+import { getProductsAction } from '@/features/api/get-products/get-products.action';
+import { NEW_PRODUCT_MS, PAGE, PRODUCTS_LIMIT } from '../lib/website/constant/shared-constant';
+import { cn } from '../lib/utils';
+import CardItem from './card-item';
+import ProductCardSkeleton from './skeletons/product-skeleton';
 
-// Grid classes for product cards
-const GRID_CLASSES = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6';
+const GRID_CLASSES = 'grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
 
-// Type for product card props
 type ProductCardProps = {
   occasionId: string;
 };
 
 export default function ProductCard({ occasionId }: ProductCardProps) {
-  // Translations
   const t = useTranslations('home-page.most-popular');
 
-  // Fetch products
-  const {
-    data: products,
-    isLoading,
-    isError,
-  } = useQuery({
+  const { data, isLoading, isError, isPlaceholderData } = useQuery({
     queryKey: ['products', occasionId],
-    queryFn: async () => {
-      const res = await getProductsAction({
+    queryFn: () =>
+      getProductsAction({
         page: PAGE,
         limit: PRODUCTS_LIMIT,
         occasionId,
         sortBy: 'mostPopular',
-      });
+      }),
+    placeholderData: keepPreviousData,
+    select: (res) => {
       const now = Date.now();
-
-      return {
-        ...res,
-        data: res.data.map((product) => ({
-          ...product,
-          isNew: now - new Date(product.createdAt).getTime() < NEW_PRODUCT_MS,
-        })),
-      };
+      return res.data.map((product) => ({
+        ...product,
+        isNew: now - new Date(product.createdAt).getTime() < NEW_PRODUCT_MS,
+      }));
     },
   });
 
-  // Show loading skeleton while fetching
   if (isLoading) {
     return (
       <div role="status">
         <span className="sr-only">{t('loading')}</span>
-        <div className={GRID_CLASSES} aria-hidden="true">
+        <ul className={GRID_CLASSES} aria-hidden="true">
           {Array.from({ length: PRODUCTS_LIMIT }).map((_, index) => (
-            <ProductCardSkeleton key={index} />
+            <li key={index}>
+              <ProductCardSkeleton />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     );
   }
 
-  // Show error message if there's an error
   if (isError) {
     return (
-      <p role="alert" className="font-bold text-ds-text-danger text-center">
+      <p role="alert" className="text-center font-bold text-ds-text-danger">
         {t('error')}
       </p>
     );
   }
 
-  const items = products?.data ?? [];
+  const items = data ?? [];
 
-  // Empty state
   if (items.length === 0) {
     return (
-      <p role="status" className="font-bold text-ds-text-primary text-center">
+      <p role="status" className="text-center font-bold text-ds-text-primary">
         {t('no-products')}
       </p>
     );
   }
 
   return (
-    <div className={GRID_CLASSES}>
+    <ul
+      className={cn(GRID_CLASSES, 'transition-opacity', isPlaceholderData && 'opacity-60')}
+      aria-busy={isPlaceholderData}
+    >
       {items.map((product) => (
-        <CardItem key={product.id} product={product} />
+        <li key={product.id}>
+          <CardItem product={product} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

@@ -59,8 +59,8 @@ export default function CarouselProduct({
       </CarouselContent>
 
       {/* Carousel Navigation */}
-      <CarouselPrevious variant="primary" />
-      <CarouselNext variant="primary" />
+      <CarouselPrevious variant="primary" className="-left-4" />
+      <CarouselNext variant="primary" className="-right-4" />
     </Carousel>
   );
 }
