@@ -1,6 +1,23 @@
 {
   "app-title": "تطبيق روز",
   "home-page": {
+    "navbar": {
+      "menu": "القائمة",
+      "openMenu": "فتح القائمة",
+      "closeMenu": "إغلاق القائمة",
+      "selectLocation": "اختر الموقع",
+      "login": "تسجيل الدخول",
+      "searchPlaceholder": "عن أي هدية رائعة تبحث؟",
+      "links": {
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "categories": "الفئات",
+        "occasions": "المناسبات",
+        "contact": "تواصل معنا",
+        "about": "من نحن"
+      }
+    },
+
     "best-selling": {
       "text": "الأكثر مبيعاً",
       "title": "<accent>اكتشف</accent> ما يشتريه الجميع <accent>الآن</accent>",

@@ -1,6 +1,22 @@
 {
   "app-title": "Rose App",
   "home-page": {
+    "navbar": {
+      "menu": "Menu",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "selectLocation": "Select location",
+      "login": "Login",
+      "searchPlaceholder": "What awesome gift are you looking for?",
+      "links": {
+        "home": "Home",
+        "products": "Products",
+        "categories": "Categories",
+        "occasions": "Occasions",
+        "contact": "Contact",
+        "about": "About"
+      }
+    },
     "best-selling": {
       "text": "Best Selling",
       "title": "<accent>Check Out</accent> What Everyone’s <accent>Buying</accent> Right Now",

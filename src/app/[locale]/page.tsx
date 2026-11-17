@@ -10,6 +10,7 @@ import CompaniesSection from '@/features/home-page/compaines/companies';
 import FooterSection from '@/features/home-page/footer/footer';
 import { useTranslations } from 'next-intl';
 import BestSellingSection from '@/features/home-page/best-selling/best-selling-section';
+import NavbarUnauthenticated from '@/shared/components/navbar-unauth';
 
 export default function HomePage() {
   // Translation
@@ -17,6 +18,7 @@ export default function HomePage() {
 
   return (
     <>
+      <NavbarUnauthenticated />
       <div className="w-11/12 mx-auto">
         {/* Hero Section */}
         <BannerHomePage />
