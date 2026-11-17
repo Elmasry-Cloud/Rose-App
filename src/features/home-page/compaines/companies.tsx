@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Company_1 from '@/assets/images/Companies/companie-1.png';
-import Company_2 from '@/assets/images/Companies/companie-2.png';
-import Company_3 from '@/assets/images/Companies/companie-3.png';
-import Company_4 from '@/assets/images/Companies/companie-4.png';
-import Company_5 from '@/assets/images/Companies/companie-5.png';
-import Company_6 from '@/assets/images/Companies/companie-6.png';
+import Company_1 from '@/assets/images/companies/companie-1.png';
+import Company_2 from '@/assets/images/companies/companie-2.png';
+import Company_3 from '@/assets/images/companies/companie-3.png';
+import Company_4 from '@/assets/images/companies/companie-4.png';
+import Company_5 from '@/assets/images/companies/companie-5.png';
+import Company_6 from '@/assets/images/companies/companie-6.png';
 import { useTranslations } from 'next-intl';
 
 const companies = [
