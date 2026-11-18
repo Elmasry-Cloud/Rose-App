@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -15,18 +15,20 @@ export function ModeToggle() {
     });
   }, []);
 
+  const systemBg = resolvedTheme === 'dark' ? 'bg-ds-bg-muted' : 'bg-ds-bg-soft';
+
   return (
-    <div className="h-10 w-fit p-0.75 flex items-center text-ds-text-plain rounded-full border border-ds-border-soft bg-ds-bg-plain">
+    <div className="h-10 w-fit p-0.75 flex items-center gap-1 text-ds-text-plain rounded-full border border-ds-border-soft bg-ds-bg-plain">
       {/* Ligh Theme */}
       <button
         onClick={() => setTheme('light')}
         aria-label="Light theme"
         className={cn(
-          'theme p-1.25 cursor-pointer rounded-full transition-all',
+          'theme p-1.25 cursor-pointer rounded-full transition-all hover:bg-ds-bg-soft',
           mounted && theme === 'light' && 'bg-ds-bg-soft'
         )}
       >
-        <SunMedium size={24} />
+        <SunMedium size={20} />
       </button>
 
       {/* System Theme */}
@@ -35,10 +37,11 @@ export function ModeToggle() {
         aria-label="System theme"
         className={cn(
           'theme p-1.25 cursor-pointer rounded-full transition-all',
-          mounted && theme === 'system' && 'bg-ds-bg-soft'
+          resolvedTheme === 'dark' ? 'hover:bg-ds-bg-muted' : 'hover:bg-ds-bg-soft',
+          mounted && theme === 'system' && systemBg
         )}
       >
-        <Monitor size={24} />
+        <Monitor size={20} />
       </button>
 
       {/* Dark Theme */}
@@ -46,11 +49,11 @@ export function ModeToggle() {
         onClick={() => setTheme('dark')}
         aria-label="Dark theme"
         className={cn(
-          'theme p-1.25 cursor-pointer rounded-full transition-all',
+          'theme p-1.25 cursor-pointer rounded-full transition-all hover:bg-ds-bg-muted',
           mounted && theme === 'dark' && 'bg-ds-bg-muted'
         )}
       >
-        <Moon size={24} />
+        <Moon size={20} />
       </button>
     </div>
   );

@@ -7,6 +7,8 @@ import { useTranslations } from 'next-intl';
 import { ModeToggle } from '../layout/mode-toggle';
 import SwitchLanguage from '../layout/switch-language';
 import { navLinks } from './nav-links';
+import { signOut, useSession } from 'next-auth/react';
+import { Button } from '../ui/button';
 
 interface NavbarSideProps {
   isOpen: boolean;
@@ -14,10 +16,20 @@ interface NavbarSideProps {
 }
 
 export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
+  // Translations
   const t = useTranslations('home-page.navbar');
   const tLinks = useTranslations('home-page.navbar.links');
+
+  // Session
+  const { status } = useSession();
+
+  // Authentication status
+  const isAuth = status === 'authenticated';
+
+  // State
   const pathname = usePathname();
 
+  // Active link
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
@@ -75,8 +87,8 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
                   className={cn(
                     'flex items-center gap-3 py-3 px-2 text-ds-text-primary transition-opacity',
                     isActive(href)
-                      ? 'font-semibold bg-ds-bg-muted'
-                      : 'opacity-80 hover:opacity-100 hover:bg-ds-bg-muted'
+                      ? 'font-semibold bg-ds-bg-primary text-ds-text-inverse'
+                      : 'opacity-80 hover:opacity-100 hover:bg-ds-bg-primary-fade'
                   )}
                 >
                   <Icon className="size-5" />
@@ -88,13 +100,22 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
         </nav>
 
         {/* Login */}
-        <div className="mt-6 pt-6 border-t border-ds-border-muted">
-          <button className="w-full py-3 rounded-md bg-ds-bg-primary text-ds-text-inverse font-semibold cursor-pointer">
-            {t('login')}
-          </button>
-        </div>
+        {!isAuth && (
+          <Link href="/login" className="mt-6 pt-6 border-t border-ds-border-muted">
+            <Button variant="primary">{t('login')}</Button>
+          </Link>
+        )}
 
-        {/* Footer: language + theme */}
+        {/* Logout */}
+        {isAuth && (
+          <div className="mt-6 pt-6 border-t border-ds-border-muted">
+            <Button variant="destructive" onClick={() => signOut({ callbackUrl: '/' })}>
+              {t('logout')}
+            </Button>
+          </div>
+        )}
+
+        {/* Header: language + theme */}
         <div className="mt-auto pt-4 border-t border-ds-border-muted flex items-center justify-between">
           <SwitchLanguage />
           <ModeToggle />

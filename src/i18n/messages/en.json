@@ -7,6 +7,7 @@
       "closeMenu": "Close menu",
       "selectLocation": "Select location",
       "login": "Login",
+      "logout": "Logout",
       "searchPlaceholder": "What awesome gift are you looking for?",
       "links": {
         "home": "Home",
@@ -15,6 +16,15 @@
         "occasions": "Occasions",
         "contact": "Contact",
         "about": "About"
+      },
+
+      "auth": {
+        "login": "Login",
+        "register": "Register",
+        "username": "Username",
+        "password": "Password",
+        "forgot-password": "Forgot password?",
+        "remember-me": "Remember me"
       }
     },
     "best-selling": {

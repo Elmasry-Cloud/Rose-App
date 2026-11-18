@@ -6,9 +6,13 @@ import { useTranslations } from 'next-intl';
 import { navLinks } from './nav-links';
 
 export default function NavbarMenu() {
-  const pathname = usePathname();
+  // Translation
   const t = useTranslations('home-page.navbar.links');
 
+  // Get current path
+  const pathname = usePathname();
+
+  // Check if link is active
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (

@@ -7,6 +7,7 @@
       "closeMenu": "إغلاق القائمة",
       "selectLocation": "اختر الموقع",
       "login": "تسجيل الدخول",
+      "logout": "تسجيل الخروج",
       "searchPlaceholder": "عن أي هدية رائعة تبحث؟",
       "links": {
         "home": "الرئيسية",
@@ -15,6 +16,15 @@
         "occasions": "المناسبات",
         "contact": "تواصل معنا",
         "about": "من نحن"
+      },
+
+      "auth": {
+        "login": "تسجيل الدخول",
+        "register": "إنشاء حساب",
+        "username": "اسم المستخدم",
+        "password": "كلمة المرور",
+        "forgot-password": "نسيت كلمة المرور؟",
+        "remember-me": "تذكرني"
       }
     },
 

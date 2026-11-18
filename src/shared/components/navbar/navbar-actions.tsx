@@ -1,25 +1,33 @@
-import { Bell, Heart, ShoppingCart, User } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { Bell, Heart, ShoppingCart } from 'lucide-react';
 import { ModeToggle } from '../layout/mode-toggle';
 import SwitchLanguage from '../layout/switch-language';
+import AuthPopover from './auth-popover';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/auth';
+import { cn } from '@/shared/lib/utils';
 
-export default function NavbarActions() {
-  const t = useTranslations('home-page.navbar');
-  const isAuth = false;
+export default async function NavbarActions() {
+  // Get session
+  const session = await getServerSession(authOptions);
+
+  // Check if user is authenticated
+  const isAuth = !!session;
 
   return (
     <div className="actions h-12.25 flex items-center order-2 lg:order-3">
       {/* Login Button */}
       {!isAuth && (
         <div className="px-4 hidden lg:block">
-          <button className="flex items-center gap-1.5 cursor-pointer">
-            <User className="size-5" />
-            <span>{t('login')}</span>
-          </button>
+          <AuthPopover />
         </div>
       )}
 
-      <div className="h-full px-4 flex items-center gap-2.5 lg:border-x border-ds-border-muted">
+      <div
+        className={cn(
+          'h-full px-4 flex items-center gap-2.5 lg:border-x border-ds-border-muted',
+          isAuth && 'lg:border-s-0'
+        )}
+      >
         {/* Wishlist Button */}
         <button className="cursor-pointer flex items-center gap-1.5">
           <Heart className="size-5" />

@@ -5,7 +5,10 @@ import { useState } from 'react';
 import NavbarSide from './navbar-side';
 
 export default function MobileMenu() {
+  // Translations
   const t = useTranslations('home-page.navbar');
+
+  // State
   const [isOpen, setIsOpen] = useState(false);
 
   return (
