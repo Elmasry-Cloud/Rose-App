@@ -9,6 +9,10 @@
       "login": "Login",
       "logout": "Logout",
       "searchPlaceholder": "What awesome gift are you looking for?",
+      "mainNavigation": "Main navigation",
+      "wishlist": "Wishlist",
+      "cart": "Cart",
+      "notifications": "Notifications",
       "links": {
         "home": "Home",
         "products": "Products",
@@ -16,6 +20,15 @@
         "occasions": "Occasions",
         "contact": "Contact",
         "about": "About"
+      },
+
+      "user": {
+        "hello": "Hello",
+        "account": "Account",
+        "addresses": "Addresses",
+        "orders": "Orders",
+        "dashboard": "Dashboard",
+        "logout": "Log out"
       },
 
       "auth": {

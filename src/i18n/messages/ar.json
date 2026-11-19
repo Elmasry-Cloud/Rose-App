@@ -9,6 +9,10 @@
       "login": "تسجيل الدخول",
       "logout": "تسجيل الخروج",
       "searchPlaceholder": "عن أي هدية رائعة تبحث؟",
+      "mainNavigation": "التنقل الرئيسي",
+      "wishlist": "المفضلة",
+      "cart": "السلة",
+      "notifications": "الإشعارات",
       "links": {
         "home": "الرئيسية",
         "products": "المنتجات",
@@ -18,6 +22,14 @@
         "about": "من نحن"
       },
 
+      "user": {
+        "hello": "مرحبًا",
+        "account": "الحساب",
+        "addresses": "العناوين",
+        "orders": "الطلبات",
+        "dashboard": "لوحة التحكم",
+        "logout": "تسجيل الخروج"
+      },
       "auth": {
         "login": "تسجيل الدخول",
         "register": "إنشاء حساب",

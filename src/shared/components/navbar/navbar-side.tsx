@@ -1,14 +1,16 @@
 'use client';
 
-import { Link, usePathname } from '@/i18n/navigation';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/shared/lib/utils';
 import { MapPin, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { signOut, useSession } from 'next-auth/react';
+import { useEffect, useRef } from 'react';
 import { ModeToggle } from '../layout/mode-toggle';
 import SwitchLanguage from '../layout/switch-language';
-import { navLinks } from './nav-links';
-import { signOut, useSession } from 'next-auth/react';
 import { Button } from '../ui/button';
+import { navLinks } from './nav-links';
+import { useIsActive } from './use-is-active';
 
 interface NavbarSideProps {
   isOpen: boolean;
@@ -16,25 +18,39 @@ interface NavbarSideProps {
 }
 
 export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
-  // Translations
+  // Translation
   const t = useTranslations('home-page.navbar');
   const tLinks = useTranslations('home-page.navbar.links');
 
   // Session
   const { status } = useSession();
-
-  // Authentication status
   const isAuth = status === 'authenticated';
 
   // State
-  const pathname = usePathname();
+  const isActive = useIsActive();
+  const closeRef = useRef<HTMLButtonElement>(null);
 
-  // Active link
-  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+  // Effects
+  useEffect(() => {
+    if (!isOpen) return;
+
+    closeRef.current?.focus();
+    document.body.style.overflow = 'hidden';
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <div
-      aria-hidden={!isOpen}
+      inert={!isOpen}
       className={cn(
         'fixed inset-0 z-50 lg:hidden transition-[visibility] duration-300',
         isOpen ? 'visible' : 'invisible'
@@ -42,6 +58,7 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
     >
       {/* Backdrop */}
       <div
+        aria-hidden="true"
         onClick={onClose}
         className={cn(
           'absolute inset-0 bg-black/50 transition-opacity duration-300',
@@ -50,33 +67,41 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
       />
 
       {/* Drawer */}
-      <aside
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-menu-title"
         className={cn(
           'navbar-side absolute inset-y-0 inset-s-0 w-[min(25rem,85vw)] bg-ds-bg-plain flex flex-col px-5 py-4 overflow-y-auto',
           'transition-transform duration-300 ease-out',
           isOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'
         )}
       >
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-ds-text-primary">{t('menu')}</h2>
+          <h2 id="mobile-menu-title" className="text-xl font-semibold text-ds-text-primary">
+            {t('menu')}
+          </h2>
           <button
+            ref={closeRef}
+            type="button"
             aria-label={t('closeMenu')}
             onClick={onClose}
-            className="cursor-pointer hover:scale-110 transition-transform"
+            className="cursor-pointer hover:scale-110 transition-transform focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
           >
-            <X className="size-6 text-ds-text-primary" />
+            <X className="size-6 text-ds-text-primary" aria-hidden="true" />
           </button>
         </div>
 
-        {/* Select location */}
-        <button className="flex items-center gap-3 mb-6 cursor-pointer text-ds-text-primary">
-          <MapPin className="size-5" />
+        <button
+          type="button"
+          className="flex items-center gap-3 mb-6 cursor-pointer text-ds-text-primary"
+        >
+          <MapPin className="size-5" aria-hidden="true" />
           <span>{t('selectLocation')}</span>
         </button>
 
-        {/* Links */}
-        <nav>
+        <nav aria-label={t('mainNavigation')}>
           <ul className="flex flex-col gap-1">
             {navLinks.map(({ href, key, icon: Icon }) => (
               <li key={href}>
@@ -91,7 +116,7 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
                       : 'opacity-80 hover:opacity-100 hover:bg-ds-bg-primary-fade'
                   )}
                 >
-                  <Icon className="size-5" />
+                  <Icon className="size-5" aria-hidden="true" />
                   {tLinks(key)}
                 </Link>
               </li>
@@ -99,28 +124,27 @@ export default function NavbarSide({ isOpen, onClose }: NavbarSideProps) {
           </ul>
         </nav>
 
-        {/* Login */}
-        {!isAuth && (
-          <Link href="/login" className="mt-6 pt-6 border-t border-ds-border-muted">
-            <Button variant="primary">{t('login')}</Button>
-          </Link>
-        )}
-
-        {/* Logout */}
-        {isAuth && (
-          <div className="mt-6 pt-6 border-t border-ds-border-muted">
+        <div className="mt-6 pt-6 border-t border-ds-border-muted">
+          {isAuth ? (
             <Button variant="destructive" onClick={() => signOut({ callbackUrl: '/' })}>
               {t('logout')}
             </Button>
-          </div>
-        )}
+          ) : (
+            <Button
+              variant="primary"
+              nativeButton={false}
+              render={<Link href="/login" onClick={onClose} />}
+            >
+              {t('login')}
+            </Button>
+          )}
+        </div>
 
-        {/* Header: language + theme */}
         <div className="mt-auto pt-4 border-t border-ds-border-muted flex items-center justify-between">
           <SwitchLanguage />
           <ModeToggle />
         </div>
-      </aside>
+      </div>
     </div>
   );
 }
