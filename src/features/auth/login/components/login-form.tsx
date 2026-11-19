@@ -9,8 +9,9 @@ import { useLocale, useTranslations } from 'next-intl';
 import { getPathname, Link } from '@/i18n/navigation';
 import { Button } from '@/shared/components/ui/button';
 import useLogin from '../lib/hooks/use-login';
+import { cn } from '@/shared/lib/utils';
 
-export default function LoginForm() {
+export default function LoginForm({ className }: { className?: string }) {
   // Translations
   const t = useTranslations('auth.login-page');
 
@@ -41,7 +42,7 @@ export default function LoginForm() {
     <form
       onSubmit={form.handleSubmit(onSubmit)}
       id="login-form"
-      className="pt-6 pb-9 border-t border-b border-ds-border-muted"
+      className={cn('pt-6 pb-9 border-t border-b border-ds-border-muted', className)}
     >
       <div className="flex flex-col gap-4">
         {/* User Name */}

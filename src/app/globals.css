@@ -212,6 +212,24 @@
   --color-zinc-800: #27272a;
   --color-zinc-900: #18181b;
   --color-zinc-950: #09090b;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 /* ======== LIGHT MODE ======== */
@@ -481,4 +499,68 @@
   .ring-danger {
     box-shadow: var(--ring-danger);
   }
+}
+
+/* Custom Css */
+p.header-description::before {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 3px;
+  background-color: var(--color-soft-pink-800);
+  bottom: 0;
+  inset-inline-start: 0;
+}
+p.header-description::after {
+  content: '';
+  position: absolute;
+  width: 72%;
+  height: 17px;
+  background-color: var(--bg-secondary-faint);
+  bottom: 0;
+  inset-inline-start: 0;
+  border-radius: 0 20px 20px 0;
+  z-index: -1;
+}
+
+/* Gallery Section */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div1 {
+  grid-row: span 3 / span 3;
+}
+
+.div2 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.div3 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.div4 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.div5 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.div6 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 3;
 }

@@ -12,6 +12,7 @@ const badgeVariants = cva(
         primary: 'bg-ds-bg-primary text-ds-text-inverse hover:bg-ds-bg-primary-saturated',
         secondary: 'bg-ds-bg-secondary text-ds-text-primary hover:bg-ds-bg-secondary-faint',
         subtle: 'bg-ds-bg-soft text-ds-text-plain hover:bg-ds-bg-muted',
+        destructive: 'bg-ds-bg-primary text-ds-text-inverse hover:bg-ds-bg-danger-saturated',
       },
     },
     defaultVariants: {
