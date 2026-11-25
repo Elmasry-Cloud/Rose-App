@@ -73,11 +73,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           locale === 'ar' ? 'font-tajawal' : 'font-sarabun'
         )}
       >
-        <Providers>
-          {/* <SwitchLanguage /> */}
-          {/* <ModeToggle /> */}
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

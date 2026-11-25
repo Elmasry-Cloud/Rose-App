@@ -24,7 +24,7 @@ export default function FooterSection() {
 
   const year = new Date().getFullYear();
   return (
-    <footer className="py-10 flex items-start md:items-center justify-center bg-ds-bg-inverse text-amber-50">
+    <footer className="py-10 flex items-start md:items-center justify-center bg-zinc-800 text-amber-50">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-4/5 text-center md:text-start">
         {/* Brand */}
         <div className="md:col-span-3 flex flex-col md:items-center gap-1.5 text-center">
@@ -34,7 +34,7 @@ export default function FooterSection() {
               alt={t('logo-alt')}
               width={240}
               height={225}
-              className="object-contain"
+              className="object-cover hue-rotate-150 saturate-75"
             />
           </Link>
           <p className="font-semibold text-base text-ds-text-secondary mt-4">{t('brand')}</p>
@@ -44,7 +44,7 @@ export default function FooterSection() {
         {/* Links */}
         <nav
           aria-labelledby="footer-nav-title"
-          className="w-fit mx-auto md:mx-0 md:col-span-4 lg:col-span-5 md:ps-4 md:border-s md:border-ds-border-muted"
+          className="w-fit mx-auto md:mx-0 md:col-span-4 lg:col-span-5 md:ps-4 md:border-s md:border-zinc-600"
         >
           <h2 id="footer-nav-title" className="font-semibold text-base text-ds-text-secondary">
             {t('discover')}
@@ -73,7 +73,7 @@ export default function FooterSection() {
         >
           <h2 id="newsletter-title" className="font-semibold text-xl text-ds-text-secondary">
             {t.rich('newsletter.title', {
-              highlight: (chunks) => <span className="text-ds-text-primary-fade">{chunks}</span>,
+              highlight: (chunks) => <span className="text-sage-100">{chunks}</span>,
             })}
           </h2>
           <p id="newsletter-desc" className="text-ds-text-soft">

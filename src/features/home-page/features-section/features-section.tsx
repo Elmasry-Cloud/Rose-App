@@ -25,7 +25,7 @@ export default function FeaturesSection() {
           <li key={id} className="flex items-center gap-4">
             <div
               className={cn(
-                'flex h-15 w-15 items-center justify-center rounded-full bg-maroon-600 text-ds-text-inverse',
+                'flex h-15 w-15 items-center justify-center rounded-full bg-sage-600 text-ds-text-inverse',
                 'dark:bg-ds-bg-primary-saturated'
               )}
               aria-hidden="true"
@@ -35,10 +35,7 @@ export default function FeaturesSection() {
 
             <div className="min-w-39.25">
               <h2
-                className={cn(
-                  'mb-1.25 text-xl font-semibold text-maroon-600',
-                  'dark:text-soft-pink-200'
-                )}
+                className={cn('mb-1.25 text-xl font-semibold text-sage-600', 'dark:text-blush-200')}
               >
                 {t(`${key}.title`)}
               </h2>

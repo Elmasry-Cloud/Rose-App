@@ -116,18 +116,30 @@
   --color-ds-border-danger-fade: var(--border-danger-fade);
 
   /* ---- Colors Variables (Primitives) ---- */
-  /* Maroon */
-  --color-maroon-50: #fbeaea;
-  --color-maroon-100: #f3c5c7;
-  --color-maroon-200: #ea9fa2;
-  --color-maroon-300: #e07a7d;
-  --color-maroon-400: #d75458;
-  --color-maroon-500: #cd2e33;
-  --color-maroon-600: #a6252a;
-  --color-maroon-700: #741c21;
-  --color-maroon-800: #501419;
-  --color-maroon-900: #2c0c10;
-  --color-maroon-950: #20090c;
+  /* Sage (primary) */
+  --color-sage-50: #f2f7f4;
+  --color-sage-100: #e3ede7;
+  --color-sage-200: #c9dbd0;
+  --color-sage-300: #aac3b3;
+  --color-sage-400: #86a893;
+  --color-sage-500: #62886f;
+  --color-sage-600: #4d7359;
+  --color-sage-700: #3f5e4a;
+  --color-sage-800: #324a3a;
+  --color-sage-900: #26382c;
+  --color-sage-950: #1a271f;
+  /* Blush (secondary) */
+  --color-blush-50: #fdf3f5;
+  --color-blush-100: #fbe3e8;
+  --color-blush-200: #f8cdd5;
+  --color-blush-300: #f2a7b5;
+  --color-blush-400: #ec8a9d;
+  --color-blush-500: #e06a82;
+  --color-blush-600: #c94f68;
+  --color-blush-700: #a63d53;
+  --color-blush-800: #832f42;
+  --color-blush-900: #5e2230;
+  --color-blush-950: #3a131c;
   /* Red */
   --color-red-50: #fef2f2;
   --color-red-100: #fee2e2;
@@ -152,18 +164,6 @@
   --color-pink-800: #790a55;
   --color-pink-900: #52043a;
   --color-pink-950: #340021;
-  /* Soft Pink */
-  --color-soft-pink-50: #fff1f5;
-  --color-soft-pink-100: #ffe0e7;
-  --color-soft-pink-200: #ffc2d0;
-  --color-soft-pink-300: #ffa3b9;
-  --color-soft-pink-400: #ff85a2;
-  --color-soft-pink-500: #ff668b;
-  --color-soft-pink-600: #e65073;
-  --color-soft-pink-700: #cc3a5b;
-  --color-soft-pink-800: #b32443;
-  --color-soft-pink-900: #99102c;
-  --color-soft-pink-950: #590414;
   /* Blue */
   --color-blue-50: #eff6ff;
   --color-blue-100: #dbeafe;
@@ -250,18 +250,18 @@
   --bg-elevated: rgb(0 0 0 / 20%);
   --bg-overlay: rgb(0 0 0 / 50%);
 
-  --bg-primary: var(--color-maroon-800);
-  --bg-primary-saturated: var(--color-maroon-700);
-  --bg-primary-faint: var(--color-maroon-100);
-  --bg-primary-fade: var(--color-maroon-50);
+  --bg-primary: var(--color-sage-700);
+  --bg-primary-saturated: var(--color-sage-600);
+  --bg-primary-faint: var(--color-sage-100);
+  --bg-primary-fade: var(--color-sage-50);
 
   --bg-info: var(--color-blue-600);
   --bg-info-faint: var(--color-blue-100);
   --bg-info-fade: var(--color-blue-50);
 
-  --bg-secondary: var(--color-soft-pink-400);
-  --bg-secondary-faint: var(--color-soft-pink-100);
-  --bg-secondary-fade: var(--color-soft-pink-50);
+  --bg-secondary: var(--color-blush-300);
+  --bg-secondary-faint: var(--color-blush-100);
+  --bg-secondary-fade: var(--color-blush-50);
 
   --bg-success: var(--color-emerald-500);
   --bg-success-faint: var(--color-emerald-100);
@@ -285,17 +285,17 @@
   --text-default: var(--color-zinc-600);
   --text-inverse: #ffffff;
 
-  --text-primary: var(--color-maroon-800);
-  --text-primary-faint: var(--color-maroon-100);
-  --text-primary-fade: var(--color-maroon-50);
+  --text-primary: var(--color-sage-700);
+  --text-primary-faint: var(--color-sage-100);
+  --text-primary-fade: var(--color-sage-50);
 
   --text-info: var(--color-blue-600);
   --text-info-faint: var(--color-blue-100);
   --text-info-fade: var(--color-blue-50);
 
-  --text-secondary: var(--color-soft-pink-400);
-  --text-secondary-faint: var(--color-soft-pink-100);
-  --text-secondary-fade: var(--color-soft-pink-50);
+  --text-secondary: var(--color-blush-600);
+  --text-secondary-faint: var(--color-blush-100);
+  --text-secondary-fade: var(--color-blush-50);
 
   --text-success: var(--color-emerald-500);
   --text-success-faint: var(--color-emerald-100);
@@ -317,17 +317,17 @@
   --border-default: var(--color-zinc-400);
   --border-inverse: #ffffff;
 
-  --border-primary: var(--color-maroon-800);
-  --border-primary-faint: var(--color-maroon-100);
-  --border-primary-fade: var(--color-maroon-50);
+  --border-primary: var(--color-sage-700);
+  --border-primary-faint: var(--color-sage-100);
+  --border-primary-fade: var(--color-sage-50);
 
   --border-info: var(--color-blue-600);
   --border-info-faint: var(--color-blue-100);
   --border-info-fade: var(--color-blue-50);
 
-  --border-secondary: var(--color-soft-pink-400);
-  --border-secondary-faint: var(--color-soft-pink-100);
-  --border-secondary-fade: var(--color-soft-pink-50);
+  --border-secondary: var(--color-blush-300);
+  --border-secondary-faint: var(--color-blush-100);
+  --border-secondary-fade: var(--color-blush-50);
 
   --border-success: var(--color-emerald-500);
   --border-success-faint: var(--color-emerald-100);
@@ -350,7 +350,7 @@
   --shadow-soft-lg: 0px 4px 18px 0px rgb(0 0 0 / 10%);
 
   /* Ring */
-  --ring-default: 0 0 0 3px var(--color-maroon-50);
+  --ring-default: 0 0 0 3px var(--color-sage-100);
   --ring-danger: 0 0 0 3px var(--color-red-100);
 }
 
@@ -367,18 +367,18 @@
   --bg-elevated: rgb(0 0 0 / 20%);
   --bg-overlay: rgb(0 0 0 / 50%);
 
-  --bg-primary: var(--color-soft-pink-300);
-  --bg-primary-saturated: var(--color-soft-pink-200);
-  --bg-primary-faint: color-mix(in srgb, var(--color-soft-pink-300) 75%, transparent);
-  --bg-primary-fade: color-mix(in srgb, var(--color-soft-pink-300) 25%, transparent);
+  --bg-primary: var(--color-sage-300);
+  --bg-primary-saturated: var(--color-sage-200);
+  --bg-primary-faint: color-mix(in srgb, var(--color-sage-300) 75%, transparent);
+  --bg-primary-fade: color-mix(in srgb, var(--color-sage-300) 25%, transparent);
 
   --bg-info: var(--color-blue-500);
   --bg-info-faint: var(--color-blue-900);
   --bg-info-fade: color-mix(in srgb, var(--color-blue-500) 25%, transparent);
 
-  --bg-secondary: var(--color-maroon-600);
-  --bg-secondary-faint: color-mix(in srgb, var(--color-maroon-600) 50%, transparent);
-  --bg-secondary-fade: color-mix(in srgb, var(--color-maroon-600) 25%, transparent);
+  --bg-secondary: var(--color-blush-400);
+  --bg-secondary-faint: color-mix(in srgb, var(--color-blush-400) 50%, transparent);
+  --bg-secondary-fade: color-mix(in srgb, var(--color-blush-400) 25%, transparent);
 
   --bg-success: var(--color-emerald-500);
   --bg-success-faint: color-mix(in srgb, var(--color-emerald-500) 50%, transparent);
@@ -402,17 +402,17 @@
   --text-default: var(--color-zinc-200);
   --text-inverse: var(--color-zinc-800);
 
-  --text-primary: var(--color-soft-pink-300);
-  --text-primary-faint: color-mix(in srgb, var(--color-soft-pink-300) 75%, transparent);
-  --text-primary-fade: color-mix(in srgb, var(--color-soft-pink-300) 25%, transparent);
+  --text-primary: var(--color-sage-300);
+  --text-primary-faint: color-mix(in srgb, var(--color-sage-300) 75%, transparent);
+  --text-primary-fade: color-mix(in srgb, var(--color-sage-300) 25%, transparent);
 
   --text-info: var(--color-blue-500);
   --text-info-faint: var(--color-blue-900);
   --text-info-fade: color-mix(in srgb, var(--color-blue-500) 25%, transparent);
 
-  --text-secondary: var(--color-maroon-600);
-  --text-secondary-faint: color-mix(in srgb, var(--color-maroon-600) 50%, transparent);
-  --text-secondary-fade: color-mix(in srgb, var(--color-maroon-600) 25%, transparent);
+  --text-secondary: var(--color-blush-400);
+  --text-secondary-faint: color-mix(in srgb, var(--color-blush-400) 50%, transparent);
+  --text-secondary-fade: color-mix(in srgb, var(--color-blush-400) 25%, transparent);
 
   --text-success: var(--color-emerald-500);
   --text-success-faint: color-mix(in srgb, var(--color-emerald-500) 50%, transparent);
@@ -434,17 +434,17 @@
   --border-default: var(--color-zinc-500);
   --border-inverse: var(--color-zinc-800);
 
-  --border-primary: var(--color-soft-pink-300);
-  --border-primary-faint: color-mix(in srgb, var(--color-soft-pink-300) 75%, transparent);
-  --border-primary-fade: color-mix(in srgb, var(--color-soft-pink-300) 25%, transparent);
+  --border-primary: var(--color-sage-300);
+  --border-primary-faint: color-mix(in srgb, var(--color-sage-300) 75%, transparent);
+  --border-primary-fade: color-mix(in srgb, var(--color-sage-300) 25%, transparent);
 
   --border-info: var(--color-blue-500);
   --border-info-faint: var(--color-blue-900);
   --border-info-fade: color-mix(in srgb, var(--color-blue-500) 25%, transparent);
 
-  --border-secondary: var(--color-maroon-600);
-  --border-secondary-faint: color-mix(in srgb, var(--color-maroon-600) 50%, transparent);
-  --border-secondary-fade: color-mix(in srgb, var(--color-maroon-600) 25%, transparent);
+  --border-secondary: var(--color-blush-400);
+  --border-secondary-faint: color-mix(in srgb, var(--color-blush-400) 50%, transparent);
+  --border-secondary-fade: color-mix(in srgb, var(--color-blush-400) 25%, transparent);
 
   --border-success: var(--color-emerald-500);
   --border-success-faint: color-mix(in srgb, var(--color-emerald-500) 50%, transparent);
@@ -467,7 +467,7 @@
   --shadow-soft-lg: 0px 4px 18px 0px rgb(0 0 0 / 10%);
 
   /* Ring */
-  --ring-default: 0 0 0 3px #473036;
+  --ring-default: 0 0 0 3px #2f4036;
   --ring-danger: 0 0 0 3px #452b2c;
 }
 
@@ -507,7 +507,7 @@ p.header-description::before {
   position: absolute;
   width: 28%;
   height: 3px;
-  background-color: var(--color-soft-pink-800);
+  background-color: var(--color-blush-600);
   bottom: 0;
   inset-inline-start: 0;
 }
