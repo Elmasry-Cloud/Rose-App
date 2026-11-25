@@ -31,14 +31,24 @@ export default async function AuthLayout({ children }: Props) {
       </section>
 
       {/* Aside Image Left */}
-      <aside className="auth-layout h-screen hidden lg:block sticky top-0">
+      <aside className="auth-layout sticky top-0 isolate hidden h-screen lg:block">
         <Image
           src={AuthImage}
           alt="auth-image"
           fill
           priority
           sizes="50vw"
-          className="object-cover h-screen"
+          className="h-screen object-cover saturate-90"
+        />
+
+        <div
+          className="pointer-events-none absolute inset-0 bg-sage-700 opacity-30 mix-blend-multiply"
+          aria-hidden="true"
+        />
+
+        <div
+          className="pointer-events-none absolute inset-0 bg-linear-to-t from-sage-950/60 via-transparent to-transparent"
+          aria-hidden="true"
         />
       </aside>
     </main>

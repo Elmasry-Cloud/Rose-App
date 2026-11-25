@@ -3,10 +3,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import ReactQueryProvider from './react-query.provider';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ThemeProvider } from './theme-provider.provider';
-import { Toaster } from '../components/ui/toast';
 import NextAuthProvider from './next-auth/next-auth.provider';
+import { Toaster } from '../components/ui/sonner';
+import { getLocale } from 'next-intl/server';
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default async function Providers({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
+  const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
     <>
       <ReactQueryProvider>
@@ -21,7 +24,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
               disableTransitionOnChange
             >
               {children}
-              <Toaster />
+              <Toaster position={dir === 'rtl' ? 'bottom-left' : 'bottom-right'} dir={dir} />
             </ThemeProvider>
           </NextAuthProvider>
         </NextIntlClientProvider>

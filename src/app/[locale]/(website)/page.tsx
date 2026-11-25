@@ -7,10 +7,8 @@ import AboutSection from '@/features/home-page/about/about';
 import GallerySection from '@/features/home-page/gallery/gallery';
 import TestimonialsSection from '@/features/home-page/testimnials/testimonials';
 import CompaniesSection from '@/features/home-page/compaines/companies';
-import FooterSection from '@/features/home-page/footer/footer';
 import { useTranslations } from 'next-intl';
 import BestSellingSection from '@/features/home-page/best-selling/best-selling-section';
-import Navbar from '@/shared/components/navbar';
 
 export default function HomePage() {
   // Translation
@@ -18,7 +16,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
       <div className="w-11/12 mx-auto">
         {/* Hero Section */}
         <BannerHomePage />
@@ -47,9 +44,6 @@ export default function HomePage() {
 
       {/* Companies Section */}
       <CompaniesSection />
-
-      {/* Footer Section */}
-      <FooterSection />
     </>
   );
 }

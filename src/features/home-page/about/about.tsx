@@ -5,6 +5,7 @@ import About_2 from '@/assets/images/about/about-2.png';
 import About_3 from '@/assets/images/about/about-3.png';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 const FEATURE_KEYS = ['prices', 'quality', 'occasion', 'delivery'] as const;
 
@@ -70,7 +71,7 @@ export default function AboutSection() {
 
         <p className="text-base text-ds-text-soft">{t('description')}</p>
 
-        <Button variant="primary" className="my-6 w-30 group">
+        <Button variant="primary" className="my-6 w-30 group" render={<Link href="/about"></Link>}>
           {t('discover')}
           <MoveRight className="rtl:-scale-x-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
         </Button>

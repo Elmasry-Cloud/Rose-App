@@ -1,18 +1,18 @@
-import { Eye, HeartPlus, ShoppingCart, Star } from 'lucide-react';
+import { Eye, Star } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Product } from '../lib/types/get-api-response';
 import { cn } from '../lib/utils';
 import { Badge } from './ui/badge';
-
-const overlayActions = [
-  { key: 'wishlist', icon: HeartPlus },
-  { key: 'quick-view', icon: Eye },
-] as const;
+import AddToCart from './cart/add-cart';
+import AddToWishlist from './cart/add-to-wishlist';
+import { Link } from '@/i18n/navigation';
 
 export default function CardItem({ product }: { product: Product }) {
+  // Translation
   const t = useTranslations('home-page.product-card');
 
+  // Computed values
   const outOfStock = product.stock <= 0;
   const hasDiscount = Number(product.discountValue) > 0;
   const finalPrice = Math.max(
@@ -38,16 +38,17 @@ export default function CardItem({ product }: { product: Product }) {
 
         {/* Image Overlay (hover + keyboard focus) */}
         <div className="image-overlay absolute inset-0 flex items-center justify-center gap-2.5 bg-ds-bg-secondary/50 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100 motion-reduce:transition-none">
-          {overlayActions.map(({ key, icon: Icon }) => (
-            <button
-              key={key}
-              type="button"
-              aria-label={t(`${key}-label`, { title: product.title })}
-              className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-ds-bg-plain transition-colors hover:bg-ds-bg-secondary hover:text-ds-text-inverse focus-visible:outline-2 focus-visible:outline-offset-2"
-            >
-              <Icon className="size-5" aria-hidden="true" />
-            </button>
-          ))}
+          {/* Wishlist */}
+          <AddToWishlist product={product} />
+
+          {/* Quick View */}
+          <Link
+            href={`/products/${product.id}`}
+            aria-label={t('quick-view-label', { title: product.title })}
+            className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-ds-bg-plain transition-colors hover:bg-ds-bg-secondary hover:text-ds-text-inverse focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <Eye className="size-5" aria-hidden="true" />
+          </Link>
         </div>
 
         <Image
@@ -97,14 +98,7 @@ export default function CardItem({ product }: { product: Product }) {
             </p>
           </div>
 
-          <button
-            type="button"
-            aria-label={t('add-to-cart', { title: product.title })}
-            disabled={outOfStock}
-            className="flex h-10.5 w-10.5 shrink-0 cursor-pointer items-center justify-center rounded-full bg-ds-bg-primary text-ds-text-inverse transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 enabled:hover:bg-ds-bg-secondary disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <ShoppingCart className="size-6" aria-hidden="true" />
-          </button>
+          <AddToCart outOfStock={outOfStock} product={product} />
         </div>
       </div>
     </article>

@@ -60,6 +60,7 @@ function Button({
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants> & IButtonProps) {
   return (
     <ButtonPrimitive
+      nativeButton={props.render ? false : undefined}
       disabled={disabled || isLoading}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}

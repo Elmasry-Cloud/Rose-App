@@ -20,7 +20,7 @@ import { cn } from '@/shared/lib/utils';
 const images = [Image2, Image3, Image4, Image5];
 
 const arrowClass =
-  'static h-7.5 w-7.5 translate-y-0 cursor-pointer rounded-full border-0 bg-transparent text-maroon-700 transition-colors hover:bg-maroon-100 hover:text-maroon-700 focus-visible:ring-2 focus-visible:ring-ds-bg-primary';
+  'static h-7.5 w-7.5 translate-y-0 cursor-pointer rounded-full border-0 bg-transparent text-sage-700 transition-colors hover:bg-sage-100 hover:text-sage-700 focus-visible:ring-2 focus-visible:ring-ds-bg-primary';
 
 export default function CarouselCustomDots() {
   const locale = useLocale();
@@ -69,7 +69,7 @@ export default function CarouselCustomDots() {
           ))}
         </CarouselContent>
 
-        <div className="absolute inset-e-8 bottom-12 z-40 flex h-8.5 translate-y-1/2 items-center justify-between gap-2 rounded-full bg-maroon-50">
+        <div className="absolute inset-e-8 bottom-12 z-40 flex h-8.5 translate-y-1/2 items-center justify-between gap-2 rounded-full bg-sage-50">
           <CarouselPrevious variant="ghost" className={cn(arrowClass, isRTL && 'rotate-180')} />
           <CarouselNext variant="ghost" className={cn(arrowClass, isRTL && 'rotate-180')} />
         </div>

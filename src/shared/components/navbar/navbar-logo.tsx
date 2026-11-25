@@ -11,7 +11,7 @@ export default function NavbarLogo() {
         width={85}
         height={85}
         priority
-        className="object-cover"
+        className="object-cover hue-rotate-150 saturate-75"
       />
     </Link>
   );

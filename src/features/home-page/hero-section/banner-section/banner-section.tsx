@@ -7,7 +7,7 @@ import { Button } from '@/shared/components/ui/button';
 import { cn } from '@/shared/lib/utils';
 import CarouselCustomDots from './banner-carousel';
 
-const darkSecondary = 'dark:bg-maroon-50 dark:text-maroon-800 dark:hover:bg-maroon-100';
+const darkSecondary = 'dark:bg-sage-50 dark:text-sage-800 dark:hover:bg-sage-100';
 
 export default function BannerHomePage() {
   // Translations
@@ -19,20 +19,28 @@ export default function BannerHomePage() {
       className="banner mt-10 flex w-full items-stretch justify-between gap-6.25 lg:h-110.25"
     >
       {/* Banner Card */}
-      <article className="card relative hidden h-full overflow-hidden rounded-2xl lg:block lg:min-w-75">
-        <div className="pointer-events-none absolute inset-0 bg-black/20" aria-hidden="true" />
-
-        <Image
-          src={BannerCard}
-          alt=""
-          placeholder="blur"
-          width={300}
-          height={439}
-          className="h-full w-full object-cover"
-        />
+      <article className="card relative isolate hidden h-full overflow-hidden rounded-2xl lg:block lg:min-w-75">
+        <figure className="relative h-full w-full">
+          <Image
+            src={BannerCard}
+            alt=""
+            placeholder="blur"
+            width={300}
+            height={439}
+            className="h-full w-full object-cover saturate-90"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-sage-700 opacity-30 mix-blend-multiply"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-linear-to-r from-sage-950/85 via-sage-950/30 to-transparent rtl:bg-linear-to-l"
+            aria-hidden="true"
+          />
+        </figure>
 
         <div className="absolute bottom-0 p-6">
-          <p className="w-fit rounded-full bg-maroon-50 px-2 py-0.5 text-xs font-medium leading-4 text-maroon-600">
+          <p className="w-fit rounded-full bg-sage-50 px-2 py-0.5 text-xs font-medium leading-4 text-sage-600">
             {t('card-title')}
           </p>
 
@@ -56,9 +64,14 @@ export default function BannerHomePage() {
       </article>
 
       {/* Banner Carousel */}
-      <div className="banner-carousel relative h-96 w-full flex-1 overflow-hidden rounded-2xl lg:h-full">
+      <div className="banner-carousel relative isolate h-96 w-full flex-1 overflow-hidden rounded-2xl lg:h-full">
         <div
-          className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-black/80 to-black/0 rtl:bg-linear-to-l"
+          className="pointer-events-none absolute inset-0 z-10 bg-sage-700 opacity-30 mix-blend-multiply"
+          aria-hidden="true"
+        />
+
+        <div
+          className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-sage-950/85 via-sage-950/30 to-transparent rtl:bg-linear-to-l"
           aria-hidden="true"
         />
 
@@ -66,7 +79,7 @@ export default function BannerHomePage() {
         <CarouselCustomDots />
 
         {/* Carousel Card Info */}
-        <div className="absolute inset-s-9 bottom-9 z-10 flex w-fit flex-col gap-1.5">
+        <div className="absolute inset-s-9 bottom-9 z-20 flex w-fit flex-col gap-1.5">
           <h1 id="banner-heading" className="text-4xl font-semibold text-white">
             {t('carousel-title')}
           </h1>
